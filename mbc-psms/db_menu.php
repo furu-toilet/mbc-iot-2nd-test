@@ -24,12 +24,12 @@ function h($str){                   //HTMLに文字列出力
   	<head>
 	    <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title>MBC-PSMS  PostgreSQLManegmentStudio</title>
+	    <title>MBC-PSMS  -PostgreSQLManegmentStudio-</title>
 	    <link rel="stylesheet" href="./css/style_db_menu.css">
   	</head>
 <body>
 	<header>
-	<h1>MBC-PSMS  PostgreSQLManegmentStudio</h1>
+	<h1>MBC-PSMS  -PostgreSQLManegmentStudio-</h1>
         <input class="left-in" type="submit" name="info_menu" value="ユーザ情報" onclick="location.href='./php/info.php'">
 	</header>
     	<iframe class="leftframe" src="left.php"></iframe>
