@@ -1,29 +1,29 @@
-var Stime = 0;
+var stime = 0;
 var OldStatus = 0;
 var min = 0;
 var sec = 0;
-var TimeStr = null;
+var TimeStr = "00:00";
 var NowStatus = null;
-var usability = document.getElementById('usability');
+//var usability = document.getElementById('usability');
 var VisualizeTime = document.getElementById('time');
 var VisualStatus = null;
 
-showstatus();
+showtime();
 
-function showstatus(){
-    RequestStart("./php/GetStatus.php").then(
+function showtime(){
+    RequestStartTime("./php/GetStatus.php").then(
         StatusRequest(NowStatus).then(
-            TimeRequest(time).then(
+            TimeRequest(stime).then(
                 TimePulus().then(
                     VisualizeTime.innerHTML = TimeStr
                 )
             )
         )
     )
-    setTimeout('showstatus()',1*1000);  //1秒ごとに更新してshowstatusを呼び出し。
+    setTimeout('showtime()',1*1000);  //1秒ごとに更新してshowstatusを呼び出し。
 }
 
-function RequestStart(url){
+function RequestStartTime(url){
   return new Promise((resolve,reject) => {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
@@ -39,13 +39,18 @@ function RequestStart(url){
     xhr.send(null);
   });
 }
-function TimeRequest(Stime){
+function TimeRequest(stime){
     return new Promise((resolve,reject) => {
-        if(sec < 10){
-           sec = "0" + sec;
-        }
-        if(min < 10){
-           min = "0" + min;
+        if(NowStatus == 1){
+            if(sec < 10){
+               sec = "0" + sec;
+            }
+            if(min < 10){
+               min = "0" + min;
+            }
+        }else{
+            sec = "00";
+            min = "00";
         }
     });
 }
@@ -61,25 +66,25 @@ function StatusRequest(NowStatus){
         if(NowStatus == 0){                //空室の場合
             OldStatus = 0;
             if(OldStatus == 1){         //今回から空室な場合
-                Stime = 0;
+                stime = 0;
             }
-            resolve(Stime);
-            usability.innerHTML = "空室";
+            resolve(stime);
+            //usability.innerHTML = "空室";
         }else if(NowStatus == 1){          //在室の場合
             OldStatus = 1;
             if(OldStatus == NowStatus){    //前回も在室状態であれば
-                Stime++;
-                sec = Stime % 60;
-                min = Math.floor(Stime/60);
+                stime++;
+                sec = stime % 60;
+                min = Math.floor(stime/60);
             }
-            usability.innerHTML = "在室";
-            resolve(Stime);
+            //usability.innerHTML = "在室";
+            resolve(stime);
         }else if(NowStatus == -1){         //使用不可の場合
             OldStatus = -1;
             if(OldStatus == 1){         //今回から使用不可の場合
-                Stime = 0;
+                stime = 0;
             }
-            usability.innerHTML = "使用不可";
+            //usability.innerHTML = "使用不可";
         }
     });
 }

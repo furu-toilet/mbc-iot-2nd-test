@@ -12,10 +12,10 @@ google.setOnLoadCallback(chartstart);
 /* 同期処理の始まり */
 function chartstart(){
     Promise.all([
-        RequestStart('./php/GetDailyCount.php'), //全てのRequestStartが終了してからthen以降の処理へ（同期）
-        RequestStart('./php/GetDailyTime.php'),
-        RequestStart('./php/GetWeeklyCount.php'),
-        RequestStart('./php/GetWeeklyTime.php')
+        RequestStartRui('./php/GetDailyCount.php'), //全てのRequestStartが終了してからthen以降の処理へ（同期）
+        RequestStartRui('./php/GetDailyTime.php'),
+        RequestStartRui('./php/GetWeeklyCount.php'),
+        RequestStartRui('./php/GetWeeklyTime.php')
       ]).then(
       success => {                  //実行結果はsuccessの中に格納される
           datalist1 = success[0];   //データのセット
@@ -28,7 +28,7 @@ function chartstart(){
 }
 
 /* サーバとのファイル通信用関数 */
-function RequestStart(url){       
+function RequestStartRui(url){       
   return new Promise((resolve,reject) => {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){

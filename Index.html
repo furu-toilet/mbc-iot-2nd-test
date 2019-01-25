@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="./css/Index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
     <link rel="stylesheet" href="./css/pushbar.css">
+    <link rel="stylesheet" href="./css/ShowTime.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="./js/MainChart.js"></script>
   </head>
   <body>
     <script type="text/javascript" src="./js/ShowStatus.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript" src="./js/MainChart.js"></script>
-    <script type="text/javascript" src="./js/ShowTime.js"></script>
     <header>
       <span data-pushbar-target="left">
         <i id="menubtn" class="fa fa-bars"></i>
@@ -28,7 +28,7 @@
       <div class="menutitle"><span data-pushbar-close class="close push_right"></span></div>
       <ul class="menu">
         <li class = "menu" id = "current"> <a href="https://www.google.com" class="link">Home</a></li>
-        <li class = "menu" id = "current"> <a href="https://mbc-iot-2nd.herokuapp.com/Chart.html" class="link">Graph</a></li>
+        <li class = "menu" id = "current"> <a href="https://www.google.com" class="link">Graph</a></li>
         <li class = "menu" id = "current"> <a href="https://www.google.com" class="link">About</a></li>
       </ul>
     </aside>
@@ -49,13 +49,13 @@
       -->
       
       <span class="center">
-        <img class="vacancy" src="./img/Available.jpg">
+        <img class="vacancy" id="vacancy">
       </span>
       <span class="right">
         <p class="timer-desc">使用時間
         </p>
         <div class="timer_frame">
-          <span class="time">00:00<div id="usability"></div>
+          <span class="time">
             <div id="time"></div>
           </span>
         </div>
@@ -81,13 +81,13 @@
         </span>
         <!--<img class="weatherimg" src="sun.png">-->
       </div>
-      <div class="box2 chart"  id="chart1_div">
+      <div class="box2 chart">
         <span class=semititle>
           <h3>推移
           </h3>
           <p class="eng">- Chart -
           </p>
-          <div class="mainchart"></div>
+          <div class="mainchart" id="chart1_div"></div>
         </span>
         
       </div>
@@ -100,6 +100,7 @@
       });
     </script>
     <script type="text/javascript" src="./js/ShowTenki.js"></script>
-    <script type="text/javascript" src="./js/ShowTime.js">
+    <script type="text/javascript" src="./js/ShowTime.js"></script>
+    <script type="text/javascript" src="./js/ShowTime.js"></script>
   </body>
 </html>

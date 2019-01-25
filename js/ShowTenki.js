@@ -17,16 +17,3 @@ $.ajax({
 
   }
 });
-
-
-// 現在時刻
-setInterval(function(){
-  var date = new Date();
-  var time ;
-  time = date.getFullYear()+'年';
-  time += (date.getMonth()+1)+'月';
-  time += date.getDate()+'日 ';
-  time += date.getHours()+'時';
-  time += date.getMinutes()+'分';
-  document.getElementById('currenttime').innerHTML = time;
-},1000);
