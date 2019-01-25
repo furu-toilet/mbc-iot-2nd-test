@@ -1,0 +1,20 @@
+.icon{
+  margin: 30px;
+  transform: scale(80);
+  animation: rotate-anime 5s linear infinite;
+ }
+ @keyframes rotate-anime {
+   0%  {transform: rotateX(0);}
+   50%  {transform: rotateX(360deg);}
+   100%  {transform: rotateX(360deg);}
+ }
+.temp{
+  margin: 30px;
+  transform: scale(80);
+  animation: rotate-anime 5s linear infinite;
+ }
+ @keyframes rotate-anime {
+   0%  {transform: rotateX(0);}
+   50%  {transform: rotateX(360deg);}
+   100%  {transform: rotateX(360deg);}
+ }
