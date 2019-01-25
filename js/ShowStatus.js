@@ -5,17 +5,18 @@ function showstatus(){
   ]).then(        //すべて上記が正常終了した場合に処理開始
     success => {        //resolveが代入される
       var SSstatus = JSON.parse(success);
+      var vacancy = document.getElementById('vacancy');
       switch(status){     //statusの値でcaseで分岐
         case  0:
-          document.getElementById("vacancy").src="./img/free.png"; //画像のリンク先を変更
+          vacancy.src = "./img/free.png";
           //console.log(0);
           break;
         case  1:
-          document.getElementById("vacancy").src="./img/use.png";  //画像のリンク先を変更
+          vacancy.src = "./img/use.png";
           //console.log(1);
           break;
         case -1:
-          document.getElementById("vacancy").src="./img/not.jpg";  //画像のリンク先を変更
+          vacancy.src = "./img/not.jpg";
           //console.log(-1);
           break;
         default :
