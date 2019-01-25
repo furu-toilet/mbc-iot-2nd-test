@@ -4,7 +4,7 @@ function showstatus(){
     RequestStartStatus('./php/GetStatus.php')     //GetStatus.phpを実行
   ]).then(        //すべて上記が正常終了した場合に処理開始
     success => {        //resolveが代入される
-      var SSstatus = JSON.parse(success);
+      var status = JSON.parse(success);
       var vacancy = document.getElementById('vacancy');
       switch(status){     //statusの値でcaseで分岐
         case  0:
