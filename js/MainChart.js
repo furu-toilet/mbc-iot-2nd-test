@@ -7,7 +7,7 @@ google.setOnLoadCallback(chartstart);
 /* 同期処理の始まり */
 function chartstart(){
     Promise.all([
-        RequestStartMain('./php/chart02.php') //全てのRequestStartが終了してからthen以降の処理へ（同期）
+        RequestStartMain('./php/GetDailyMerge.php') //全てのRequestStartが終了してからthen以降の処理へ（同期）
       ]).then(
       success => {                  //実行結果はsuccessの中に格納される
           datalist1 = success;   //データのセット
