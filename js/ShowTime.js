@@ -20,7 +20,7 @@ function showtime(){
             )
         )
     )
-    setTimeout('showstatus()',1*1000);  //1秒ごとに更新してshowstatusを呼び出し。
+    setTimeout('showtime()',1*1000);  //1秒ごとに更新してshowstatusを呼び出し。
 }
 
 function RequestStartTime(url){
