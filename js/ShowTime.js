@@ -62,6 +62,8 @@ function StatusRequest(NowStatus){
             OldStatus = 0;
             if(OldStatus == 1){         //今回から空室な場合
                 time = 0;
+                sec = 0;
+                min = 0;
             }
             resolve(time);
             //usability.innerHTML = "空室";
@@ -78,6 +80,8 @@ function StatusRequest(NowStatus){
             OldStatus = -1;
             if(OldStatus == 1){         //今回から使用不可の場合
                 time = 0;
+                sec = 0;
+                min = 0;
             }
             //usability.innerHTML = "使用不可";
         }
