@@ -9,18 +9,14 @@ function showstatus(){
       switch(status){     //statusの値でcaseで分岐
         case  0:
           vacancy.src = "./img/free.png";
-          console.log(0);
           break;
         case  1:
           vacancy.src = "./img/use.png";
-          console.log(1);
           break;
         case -1:
           vacancy.src = "./img/not.jpg";
-          console.log(-1);
           break;
         default :
-          console.log("default");
           break;
                    }
     },
