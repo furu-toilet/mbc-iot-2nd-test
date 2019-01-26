@@ -48,6 +48,9 @@ function TimeRequest(time){
             if(min < 10){
                min = "0" + min;
             }
+        }else{
+            sec = "00";
+            min = "00";
         }
     });
 }
@@ -65,7 +68,6 @@ function StatusRequest(NowStatus){
                 time = 0;
                 sec = 0;
                 min = 0;
-                TimeStr = "00:00";
             resolve(time);
             //usability.innerHTML = "空室";
         }else if(NowStatus == 1){          //在室の場合
@@ -82,7 +84,6 @@ function StatusRequest(NowStatus){
                 time = 0;
                 sec = 0;
                 min = 0;
-                TimeStr = "00:00";
             //usability.innerHTML = "使用不可";
         }
     });
