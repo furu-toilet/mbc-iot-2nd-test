@@ -112,8 +112,9 @@ h3 {
   display: inline-block;
 }
 .mainchart {
-  width: 480px;
-  height: 280px;
+  width: 100%;
+  /*height: 280px;*/
+  height: 100%;
 }
 .weatherimg {
   width: 180px;
