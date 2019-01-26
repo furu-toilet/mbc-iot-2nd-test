@@ -1,10 +1,10 @@
-var stime = 0;
+var time = 0;
 var OldStatus = 0;
 var min = 0;
 var sec = 0;
-var TimeStr = "00:00";
+var TimeStr = null;
 var NowStatus = null;
-//var usability = document.getElementById('usability');
+var usability = document.getElementById('usability');
 var VisualizeTime = document.getElementById('time');
 var VisualStatus = null;
 
@@ -13,14 +13,14 @@ showtime();
 function showtime(){
     RequestStartTime("./php/GetStatus.php").then(
         StatusRequest(NowStatus).then(
-            TimeRequest(stime).then(
+            TimeRequest(time).then(
                 TimePulus().then(
                     VisualizeTime.innerHTML = TimeStr
                 )
             )
         )
     )
-    setTimeout('showtime()',1*1000);  //1秒ごとに更新してshowstatusを呼び出し。
+    setTimeout('showstatus()',1*1000);  //1秒ごとに更新してshowstatusを呼び出し。
 }
 
 function RequestStartTime(url){
@@ -39,18 +39,13 @@ function RequestStartTime(url){
     xhr.send(null);
   });
 }
-function TimeRequest(stime){
+function TimeRequest(time){
     return new Promise((resolve,reject) => {
-        if(NowStatus == 1){
-            if(sec < 10){
-               sec = "0" + sec;
-            }
-            if(min < 10){
-               min = "0" + min;
-            }
-        }else{
-            sec = "00";
-            min = "00";
+        if(sec < 10){
+           sec = "0" + sec;
+        }
+        if(min < 10){
+           min = "0" + min;
         }
     });
 }
@@ -66,23 +61,23 @@ function StatusRequest(NowStatus){
         if(NowStatus == 0){                //空室の場合
             OldStatus = 0;
             if(OldStatus == 1){         //今回から空室な場合
-                stime = 0;
+                time = 0;
             }
-            resolve(stime);
+            resolve(time);
             //usability.innerHTML = "空室";
         }else if(NowStatus == 1){          //在室の場合
             OldStatus = 1;
             if(OldStatus == NowStatus){    //前回も在室状態であれば
-                stime++;
-                sec = stime % 60;
-                min = Math.floor(stime/60);
+                time++;
+                sec = time % 60;
+                min = Math.floor(time/60);
             }
             //usability.innerHTML = "在室";
-            resolve(stime);
+            resolve(time);
         }else if(NowStatus == -1){         //使用不可の場合
             OldStatus = -1;
             if(OldStatus == 1){         //今回から使用不可の場合
-                stime = 0;
+                time = 0;
             }
             //usability.innerHTML = "使用不可";
         }
