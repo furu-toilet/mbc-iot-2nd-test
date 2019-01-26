@@ -41,11 +41,13 @@ function RequestStartTime(url){
 }
 function TimeRequest(time){
     return new Promise((resolve,reject) => {
-        if(sec < 10){
-           sec = "0" + sec;
-        }
-        if(min < 10){
-           min = "0" + min;
+        if(NowStatus == 1){
+            if(sec < 10){
+               sec = "0" + sec;
+            }
+            if(min < 10){
+               min = "0" + min;
+            }
         }
     });
 }
