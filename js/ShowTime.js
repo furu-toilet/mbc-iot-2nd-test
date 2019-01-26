@@ -42,16 +42,11 @@ function RequestStartTime(url){
 function TimeRequest(time){
     return new Promise((resolve,reject) => {
         if(NowStatus == 1){
-            if(sec == 0 & min == 0){
-                sec = "00";
-                min = "00";
-            }else{    
-                if(sec < 10){
-                   sec = "0" + sec;
-                }
-                if(min < 10){
-                   min = "0" + min;
-                }
+            if(sec < 10){
+               sec = "0" + sec;
+            }
+            if(min < 10){
+               min = "0" + min;
             }
         }else{
             sec = "00";
@@ -62,7 +57,11 @@ function TimeRequest(time){
 
 function TimePulus(){
     return new Promise((resolve,reject) => {
-        TimeStr = min + " : " + sec;
+        if(sec == 0 & min == 0){
+           TimeStr = "00:00";
+        }else{
+            TimeStr = min + " : " + sec;
+           }
     });
 }
 
