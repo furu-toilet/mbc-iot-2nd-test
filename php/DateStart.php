@@ -19,7 +19,7 @@ $SqlTableCheck  = "select * from \"ToiletTerminal\" where \"TanmatsuInfo\" = 'Te
 $SqlTableDelete = "delete from \"ToiletTerminal\" where \"TanmatsuInfo\" = 'Test';";    //①の端末情報に基づきそのレコードを削除(ToiletTerminal内)。
 $SqlTableCreate = "insert into \"ToiletTerminal\" values ('Test',0,CURRENT_TimeStamp + '9 hours');";    //①の端末情報に基づき新規レコードを挿入。（朝一処理なので空室データでよい）
 $SqlRuiDelete   = "delete from \"RuiInfo\" where \"Date\" <= CURRENT_TimeStamp + '9 hours' + '-7 day';";    //②の累積テーブルより端末情報に基づいた一週間以前のデータを削除する。
-$SqlDeleteUsing = "DELETE FROM \"RuiInfo\" WHERE \"UsedTime\" is NULL;";
+$SqlDeleteUsing = "delete from \"RuiInfo\" where \"UsedTime\" is null;";
 
 /*  以下SQL実行＆制御  */
 $check = $db->db_sql($SqlTableCheck);       //①チェック用ファイル取得(現在の情報だけなので1レコード想定)
