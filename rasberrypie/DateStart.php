@@ -10,7 +10,7 @@ RasberryPie用DB朝一処理用phpファイル。
 上記を実行するphpファイルである。
 */
 /*  おまじない  */
-require_once "./Common.php";
+require_once "../php/Common.php";
 $db = new Common();
 
 
