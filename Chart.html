@@ -12,63 +12,54 @@
   <!--APIに接続 -->
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
-  <!-- -->
+  <!-- RuiChart.cssの読み込み -->
   <script type="text/javascript" src="js/RuiChart.js"></script>
 
-	<title>グラフ画面</title>
-	<!-- ①pushbar.cssの呼び出し -->
-	<link rel="stylesheet" type="text/css" href="./css/pushbar.css">
+  <!-- Common.cssの読み込み -->
+  <link rel="stylesheet" href="./css/Common.css">
+
+  <!-- ナビゲーションメニューのボタンを読み込み -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
+
+  <!-- Pushbar.cssの呼び出し -->
+  <link rel="stylesheet" type="text/css" href="css/pushbar.css">
+
+  <title>グラフ画面</title>
+
 </head>
-
-<!--スタイルシートをCSSにし、Chart.cssとリンクさせる -->
 <body>
+  <!-- ナビゲーションメニューヘッダー -->
+  <header>
+    <span data-pushbar-target="left">
+      <i id="menubtn" class="fa fa-bars"></i>
+    </span>
+    <p class="title">IoT2nd</p>
+  </header>
+  <!-- ナビゲーションメニュー項目設定 -->
+  <aside data-pushbar-id="left" class="pushbar from_left">
+    <div class="menutitle"><span data-pushbar-close class="close push_right"></span></div>
+    <ul class="menu">
+      <li class = "menu" id = "current"> <a href="https://mbc-iot-2nd.herokuapp.com/Index.html" class="link">Home</a></li>
+      <li class = "menu" id = "current"> <a href="https://mbc-iot-2nd.herokuapp.com/Chart.html" class="link">Graph</a></li>
+      <li class = "menu" id = "current"> <a href="https://www.google.com" class="link">About</a></li>
+    </ul>
+  </aside>
 
-  <!-- ②ナビゲーションメニューの設定　（左に表示する） -->
-	<aside data-pushbar-id="left" class="pushbar from_left">
-		<!-- ③ナビゲーションメニューのタイトル　 -->
-		<!-- ④ナビゲーションメニューの外側をクリックしたら閉じる -->
-		<div class="title"><span data-pushbar-close class="close push_right"></span> ナビゲーションメニュー </div>
-
-		<!-- 課題①　リンクを設定しよう！ -->
-		<!-- 外部リンクでもいいよ。Googleのホームページとか -->
-		<script type="text/javascript" src="https://www.google.com"></script>
-
-		<ul class="menu">
-		  <li class = "menu" id = "current"> <a href="https://www.google.com" class="link">Home</a></li>
-		  <li class = "menu" id = "current"> <a href="https://psms-prot.herokuapp.com/pushbar/Chart.html" class="link">Graph</a></li>
-		  <li class = "menu" id = "current"> <a href="https://www.google.com" class="link">About</a></li>
-		</ul>
-
-	</aside>
-
-	<!-- ⑤下のボタンを押下することでナビゲーションメニューを表示する -->
-	<!-- 課題②　ナビゲーションメニューのアイコンを設定しよう -->
-
-	<!-- 画面定義書ではボタンは画像だね。新井君と連携して画像を設定してくれ！ -->
-	<div class="pushbar-top-area">
-		<button data-pushbar-target="left">
-			<img src="./img/button.png"width="30" height="30" />
-		</button>
-		<strong>IoTToilet</strong>
-	</div>
-  
   <!--  グラフの描画エリア -->
   <div id="chart1_div" style="width: 75%; height: 350px"></div>
   <div id="chart2_div" style="width: 75%; height: 350px"></div>
   <div id="chart3_div" style="width: 75%; height: 350px"></div>
   <div id="chart4_div" style="width: 75%; height: 350px"></div>
 
-	<!-- ⑤pushbar.jsの呼び出し -->
-	<script type="text/javascript" src="./js/pushbar.js"></script>
-	<!-- 実際にナビゲーションメニューの描画はJSで -->
-	<script type="text/javascript">
-	var pushbar = new Pushbar({
-		blur:true,
-		overlay:true,
-	});
+  <!-- pushbar.jsの呼び出し -->
+  <script type="text/javascript" src="./js/pushbar.js"></script>
+  <!-- 実際にナビゲーションメニューの描画はJSで -->
+  <script type="text/javascript">
+    var pushbar = new Pushbar({
+    blur:true,
+    overlay:true,
+  });
+
 </script>
-
-
 </body>
-<!--  グラフの描画エリア -->
 </html>
