@@ -10,7 +10,7 @@ $.ajax({
     document.getElementById('tenki_icon').appendChild(img);
 
     // 温度取得
-    document.getElementById('tenki_temp').innerHTML = Math.floor(weatherdata.main.temp - 273.15);
+    document.getElementById('temp_ondo').innerHTML = Math.floor(weatherdata.main.temp - 273.15);
 
     // 位置取得
     //document.getElementById('here').innerHTML = weatherdata.name;
