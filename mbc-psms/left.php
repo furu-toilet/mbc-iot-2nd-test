@@ -82,7 +82,7 @@ foreach($tbal as $value){		//配列を調整
         <ul>
           <?php foreach($list as $value){ ?>
           <li><?php echo $value; ?></li>
-          <?php } //foreach終了 ?>
+          <?php } /*foreach終了*/ ?>
         </ul>
       </li>
       
