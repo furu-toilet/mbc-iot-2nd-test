@@ -28,7 +28,7 @@ GROUP BY EXTRACT(HOUR FROM \"StartTime\")
 ORDER BY EXTRACT(HOUR FROM \"StartTime\");
 ";      //DBManagerからSQL文が決まったらここに入力！
 $daydata = $db->db_sql($sql);    //二次元配列を取得。　値は 時間帯(Str型),使用回数(Int型),使用時間(Int型)
-array_push($result,array("時間帯","使用回数","使用時間"));
+array_push($result,array("時間帯","使用回数","使用時間(分)"));
 for($i=0;$i<$timezone;$i++)     //時間帯と使用回数、使用時間 0をセットする
 {
     array_push($result,[$i.":00",0,0]);
