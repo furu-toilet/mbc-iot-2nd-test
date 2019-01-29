@@ -1,6 +1,6 @@
 <?php
 
-echo "本番環境用実行ページ";
-
+header( "Location: https://mbc-iot-2nd.herokuapp.com/Index.html" ) ;
+exit ;
 
 ?>
