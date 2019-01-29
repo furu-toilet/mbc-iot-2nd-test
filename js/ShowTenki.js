@@ -7,13 +7,13 @@ $.ajax({
     var img = document.createElement('img');
     img.src = "https://openweathermap.org/img/w/"+weatherdata.weather[0].icon+".png";
     img.alt = weatherdata.weather[0].main;
-    document.getElementById('icon').appendChild(img);
+    document.getElementById('tenki_icon').appendChild(img);
 
     // 温度取得
-    document.getElementById('temp').innerHTML = Math.floor(weatherdata.main.temp - 273.15);
+    document.getElementById('tenki_temp').innerHTML = Math.floor(weatherdata.main.temp - 273.15);
 
     // 位置取得
-    document.getElementById('here').innerHTML = weatherdata.name;
+    //document.getElementById('here').innerHTML = weatherdata.name;
 
   }
 });
