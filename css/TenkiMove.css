@@ -8,7 +8,7 @@
    50%  {transform: rotateX(360deg);}
    100%  {transform: rotateX(360deg);}
  }
-.tenki_temp{
+.temp_ondo{
   margin: 30px;
   transform: scale(80);
   animation: rotate-anime 5s linear infinite;
