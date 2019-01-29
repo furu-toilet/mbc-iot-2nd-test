@@ -52,36 +52,12 @@ if (isset($_POST["login"])) {
     <link rel="stylesheet" href="./css/inreg.css">
     <!-- bootstrap? -->
     <!-- link rel="stylesheet" href="styles.css"-->
-    <!-- Common.cssの読み込み -->
-    <link rel="stylesheet" href="./css/Common.css">
-
-    <!-- Common.cssの読み込み -->
-    <link rel="stylesheet" href="./css/Chart.css">
-
-    <!-- ナビゲーションメニューのボタンを読み込み -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
-
-    <!-- Pushbar.cssの呼び出し -->
-    <link rel="stylesheet" type="text/css" href="css/pushbar.css">
-    </head>
-    <body>
-    <!-- ナビゲーションメニューヘッダー -->
-	  <header>
-	    <span data-pushbar-target="left">
-	      <i id="menubtn" class="fa fa-bars"></i>
-	    </span>
-	    <p class="title">IoT2nd</p>
-	  </header>
-	  <!-- ナビゲーションメニュー項目設定 -->
-	  <aside data-pushbar-id="left" class="pushbar from_left">
-	    <div class="menutitle"><span data-pushbar-close class="close push_right"></span></div>
-	    <ul class="menu">
-	      <li class = "menu" id = "current"> <a href="https://mbc-iot-2nd.herokuapp.com/Index.html" class="link">Home</a></li>
-	      <li class = "menu" id = "current"> <a href="https://mbc-iot-2nd.herokuapp.com/Chart.html" class="link">Graph</a></li>
-	      <li class = "menu" id = "current"> <a href="https://www.google.com" class="link">About</a></li>
-	      <li class = "menu" id = "current"> <a href="https://mbc-iot-2nd.herokuapp.com/mbc-psms" class="link">MBC-PSMS</a></li>
-	    </ul>
-	  </aside>
+  </head>
+  <body>
+    <!--div class="col-xs-6 col-xs-offset-3"-->
+    <header>
+    IoT2nd
+    </header>
     <div class="main">
     <form method="post">
       <h1>ログイン</h1>
@@ -102,15 +78,6 @@ if (isset($_POST["login"])) {
       <a href="./php/register.php">ユーザー登録はこちら</a>
       </div>
     </div>
-
-  <!-- pushbar.jsの呼び出し -->
-  <script type="text/javascript" src="../js/pushbar.js"></script>
-  <!-- 実際にナビゲーションメニューの描画はJSで -->
-  <script type="text/javascript">
-    var pushbar = new Pushbar({
-    blur:true,
-    overlay:true,
-  });
-</script>
+    <!-- /div-->
   </body>
 </html>
