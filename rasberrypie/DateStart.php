@@ -17,7 +17,7 @@ $db = new Common();
 /*  実行SQLの用意  */
 $SqlTableCheck  = "select * from \"ToiletTerminal\" where \"TanmatsuInfo\" = 'ラズパイ1F男子トイレ';";    //①の端末情報が存在するかチェックするSQL(ToiletTerminal内)。
 $SqlTableDelete = "delete from \"ToiletTerminal\" where \"TanmatsuInfo\" = 'ラズパイ1F男子トイレ';";    //①の端末情報に基づきそのレコードを削除(ToiletTerminal内)。
-$SqlTableCreate = "insert into \"ToiletTerminal\" values ('Test',0,CURRENT_TimeStamp + '9 hours');";    //①の端末情報に基づき新規レコードを挿入。（朝一処理なので空室データでよい）
+$SqlTableCreate = "insert into \"ToiletTerminal\" values ('ラズパイ1F男子トイレ',0,CURRENT_TimeStamp + '9 hours');";    //①の端末情報に基づき新規レコードを挿入。（朝一処理なので空室データでよい）
 $SqlRuiDelete   = "delete from \"RuiInfo\" where \"Date\" <= CURRENT_TimeStamp + '9 hours' + '-7 day';";    //②の累積テーブルより端末情報に基づいた一週間以前のデータを削除する。
 $SqlDeleteUsing = "delete from \"RuiInfo\" where \"UsedTime\" is null;";
 
