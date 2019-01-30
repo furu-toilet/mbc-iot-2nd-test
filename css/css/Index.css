@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:600');
+/*index.css*/
+
+body {
+  font-family: 'M PLUS 1p', sans-serif;
+}
+.status {
+  width: 960px;
+  height: 360px;
+  margin-top: 36px;
+}
+.timer-desc {
+  font-weight: medium;
+  text-align: left;
+  margin-left: 6px;
+  margin-top: 100px;
+  font-size: 18px;
+}
+.timer_frame {
+  width: 310px;
+  height: 140px;
+  border: 1px solid silver;
+  border-radius: 4px;
+  margin-top: 3px;
+  margin-right: 20px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 126px;
+  font-weight: semibold;
+  text-align: center;
+  background-color: #ededed;
+  color: #2e2e2e;
+  float: right;
+}
+.place {
+  font-weight: medium;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+.dummy_under {
+  width: 960px;
+  height: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  display: flex;
+  height: 360px;
+  width: 960px;
+  justify-content: space-between;
+}
+.weather {
+  position: relative;
+  height: 360px;
+  width: 330px;
+}
+.chart {
+  position: relative;
+  height: 360px;
+  width: 553px;
+}
+h3 {
+  /*ボックス内の見出し*/
+  font-size: 24px;
+  padding-top: 6px;
+}
+.semititle {
+  text-align: center;
+}
+.eng {
+  font-size: 16px;
+}
+.icon_toilet {
+  display: inline-block;
+  width: 120px;
+  float: left;
+  margin-top: 2px;
+  margin-left: 60px;
+  padding-left: 36px;
+  padding-right: 36px;
+  /*border: 1px solid grey;
+  border-radius: 4px;"*/
+}
+.vacancy {
+  display: inline-block;
+  text-align: center;
+  margin-top: 60px;
+  border-radius: 6px;
+  width: 180px;
+}
+.left {
+  float: left;
+  margin: 0px;
+  display: inline-block;
+  width: 319px;
+  height: 295px;
+}
+.center {
+  float: left;
+  margin: 0px;
+  display: inline-block;
+  width: 319px;
+  height: 295px;
+}
+.right {
+  float: left;
+  margin: 0px;
+  display: inline-block;
+  width: 319px;
+  height: 295px;
+}
+h3 {
+  display: inline-block;
+}
+.mainchart {
+  width: 480px;
+}
+.weatherimg {
+  width: 130px;
+  padding-top: 50px;
