@@ -50,7 +50,7 @@ function h($str){                   //HTMLに文字列出力
 	  <br>
     <?php if($db->db_msg() == null){       //エラー時の表示を制御  ?>
 	    <?=h('正常終了') ?><br>
-            <table style="overflow: auto;">
+            <table>
             <tr>
         <?php foreach($result[0] as $key => $_): ?>
             <th><?=h($key) ?></th>
