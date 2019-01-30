@@ -18,7 +18,7 @@ header{       /*ヘッダー部*/
   /*background: rgb(17,149,217);
   background: linear-gradient(90deg, rgba(17,149,217,1) 0%, rgba(121,232,255,0.9304096638655462) 100%);*/
   background: #333333;
-  width: 100%
+  width: 100%;
   margin: 0px;
   font-size: 34px;
   vertical-align: middle;
@@ -49,4 +49,14 @@ header{       /*ヘッダー部*/
   border-radius: 6px;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   text-align: center;
+}
+
+
+#menubtn {
+  padding: 6px;
+  transition: 0.2s;
+}
+
+#menubtn:hover {
+  opacity: 0.6;
 }
