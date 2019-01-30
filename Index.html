@@ -18,37 +18,41 @@
   <body>
     <script type="text/javascript" src="./js/ShowStatus.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-      
-    <!-- リスト・メニュー記述位置変更↓へ
-         ヘッダー・メニューアイコン  メイン・グラフ画面共通で使用する-->
     <header>
-      <span data-pushbar-target="left"> 
-        <i id="show" class="fa fa-bars"></i> <!--id変更 menubtn→show-->
+      <span data-pushbar-target="left">
+        <i id="menubtn" class="fa fa-bars"></i>
       </span>
       <p class="title">IoT2nd
       </p>
     </header>
- 
-    <!-- box1 空室情報・使用時間を表示
-              左・中央・右で三分割して記述-->
+    <aside data-pushbar-id="left" class="pushbar from_left">
+      <div class="menutitle"><span data-pushbar-close class="close push_right"></span></div>
+      <ul class="menu">
+        <li class = "menu" id = "current"> <a href="https://www.google.com" class="link">Home</a></li>
+        <li class = "menu" id = "current"> <a href="https://mbc-iot-2nd.herokuapp.com/Chart.html" class="link">Graph</a></li>
+        <li class = "menu" id = "current"> <a href="https://www.google.com" class="link">About</a></li>
+        <li class = "menu" id = "current"> <a href="https://mbc-iot-2nd.herokuapp.com/mbc-psms" class="link">MBC-PSMS</a></li>
+      </ul>
+    </aside>
+
     <div class="box1 status">
       <span class=semititle>
         <h3>トイレの空室情報
         </h3>
         <p class="eng">- Toilet Vacancy -
         </p>
-      </span>   
-      <!-- 左：アイコンとトイレの位置-->
+      </span>
       <span class="left">
         <p class="place">1Fセンター靴箱前
         </p>
-        <img class="icon_toilet" src="https://illust8.com/wp-content/uploads/2018/08/toilet-mark_men_867.png">
+        <img class="icon" src="https://illust8.com/wp-content/uploads/2018/08/toilet-mark_men_867.png">
       </span>
-      <!-- 中央：空室情報-->
+      <!-- 結合後使用
+      -->
+      
       <span class="center">
         <img class="vacancy" id="vacancy">
       </span>
-      <!-- 右：使用時間-->
       <span class="right">
         <p class="timer-desc">使用時間
         </p>
@@ -58,13 +62,9 @@
           </span>
         </div>
       </span>
-    </div>  
+    </div>
     <br>
-  
-    <!-- 画面下半分の範囲指定用ダミー-->
     <div class="dummy_under">
-      
-      <!-- 左:天気表示-->
       <div class="box2 weather">
         <span class=semititle>
           <h3>天気
@@ -81,16 +81,15 @@
           <div class="tenki_icon">
             <span id="tenki_icon"></span>
           </div>
-
+            
           <div class="tenki_temp">
             現在の気温 :
             <span id="temp_ondo"></span>
             <span>℃</span>
           </div>
         </span>
+        <!--<img class="weatherimg" src="sun.png">-->
       </div>
-      
-      <!-- 右：グラフ表示-->
       <div class="box2 chart">
         <span class=semititle>
           <h3>推移
@@ -99,28 +98,16 @@
           </p>
           <div class="mainchart" id="chart1_div"></div>
         </span>
+        
       </div>
-      
     </div>
-    
-    <!-- ↓メイン・グラフ画面共有で使用する-->
-    <div id="cover"></div> <!-- 背景を暗くするための範囲指定-->
-    
-    <!-- ナビゲーションメニュー　アイコンのクリック時にz-indexの切り替えで表示-->
-    <div id="menu">
-      <div class="hide_area">
-        <span id="hide" class="fa fa-remove"></span>
-      </div>
-      <div class="menu_title">MENU</div>
-      <ul class="menu_list">
-        <li class = "menu" id = "current"> <a href="https://mbc-iot-2nd.herokuapp.com/Index.html" class="link">Home</a></li>
-        <li class = "menu" id = "current"> <a href="https://mbc-iot-2nd.herokuapp.com/Chart.html" class="link">Graph</a></li>
-        <li class = "menu" id = "current"> <a href="http://www.mbcnet.co.jp/" class="link">About</a></li>
-        <li class = "menu" id = "current"> <a href="https://mbc-iot-2nd.herokuapp.com/mbc-psms" class="link">MBC-PSMS</a></li>
-      </ul>
-    </div>
-    
     <script type="text/javascript" src="./js/pushbar.js"></script>
+    <script type="text/javascript">
+      var pushbar = new Pushbar({
+        blur:false,
+        overlay:true,
+      });
+    </script>
     <script type="text/javascript" src="./js/ShowTenki.js"></script>
     <script type="text/javascript" src="./js/ShowTime.js"></script>
   </body>
