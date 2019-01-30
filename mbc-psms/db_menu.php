@@ -64,6 +64,8 @@ function h($str){                   //HTMLに文字列出力
             </tr>
         <?php endforeach; ?>
             </table>
+	    <br>
+	    <br>
 
     <?php }else{  //エラーメッセージ ?>	  
           <?= h($db->db_msg()) ?>	     
