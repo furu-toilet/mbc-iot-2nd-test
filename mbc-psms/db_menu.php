@@ -21,12 +21,13 @@ function h($str){                   //HTMLに文字列出力
 
 <!DOCTYPE html>
 <html>
-  	<head>
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title>PSMS  PostgreSQLManegmentStudio</title>
-	    <link rel="stylesheet" href="./css/style_db_menu.css">
-  	</head>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>PSMS  PostgreSQLManegmentStudio</title>
+		<link rel="stylesheet" href="./css/style_db_menu.css">
+		<link rel="icon" type="image/png" href="../img/CloudDatabase.png" sizes="16x16" id="favicon">
+	</head>
 <body>
 	<header>
 	<h1>MBC-PSMS  --PostgreSQLManegmentStudio--</h1>
