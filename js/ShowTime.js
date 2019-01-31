@@ -22,11 +22,7 @@ function showtime(){
     )
     time = null;
     OldStatus = null;
-    min = null;
-    sec = null;
-    TimeStr = null;
     NowStatus = null;
-    usability = null;
     VisualizeStatus = null;
     setTimeout('showtime()',1*1000);  //1秒ごとに更新してshowstatusを呼び出し。
 }
