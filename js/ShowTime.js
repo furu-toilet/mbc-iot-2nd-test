@@ -20,10 +20,6 @@ function showtime(){
             )
         )
     )
-    time = null;
-    OldStatus = null;
-    NowStatus = null;
-    VisualizeStatus = null;
     setTimeout('showtime()',1*1000);  //1秒ごとに更新してshowstatusを呼び出し。
 }
 
