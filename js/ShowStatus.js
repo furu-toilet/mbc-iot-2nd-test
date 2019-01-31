@@ -22,7 +22,10 @@ function showstatus(){
           break;
         default :
           break;
-                   }
+    }
+    status = null;
+    vacancy = null;
+    favicon = null;
     },
   )
 
