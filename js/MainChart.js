@@ -31,7 +31,6 @@ function RequestStartMain(url){
     }    
     xhr.open("GET",url,true);   //urlをもとに接続
     xhr.send(null);
-    xhr = null;
   });
 }
 
