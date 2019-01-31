@@ -37,6 +37,7 @@ function RequestStartTime(url){
     }    
     xhr.open("GET",url,true);
     xhr.send(null);
+    xhr = null;
   });
 }
 function TimeRequest(time){
