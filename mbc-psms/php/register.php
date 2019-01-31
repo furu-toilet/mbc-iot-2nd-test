@@ -45,6 +45,7 @@ if (isset($_POST['register'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>会員登録</title>
     <link rel="stylesheet" href="../css/inreg.css">
+    <link rel="icon" type="image/png" href="../../img/CloudDatabase.png" sizes="16x16" id="favicon">
   </head>
   <body>
     <header>
