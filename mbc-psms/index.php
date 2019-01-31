@@ -52,6 +52,7 @@ if (isset($_POST["login"])) {
     <link rel="stylesheet" href="./css/inreg.css">
     <!-- bootstrap? -->
     <!-- link rel="stylesheet" href="styles.css"-->
+    <link rel="icon" type="image/png" href="../img/CloudDatabase.png" sizes="16x16" id="favicon">
   </head>
   <body>
     <!--div class="col-xs-6 col-xs-offset-3"-->
