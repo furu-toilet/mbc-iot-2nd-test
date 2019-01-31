@@ -40,7 +40,6 @@ function showstatus(){
       }    
       xhr.open("GET",url,true);
       xhr.send(null);
-      xhr = null;
     });
   }
     
