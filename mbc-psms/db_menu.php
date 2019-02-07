@@ -33,7 +33,7 @@ function h($str){                   //HTMLに文字列出力
 	<h1>MBC-PSMS  --PostgreSQLManegmentStudio--</h1>
         <input class="left-in" type="submit" name="info_menu" value="ユーザ情報" onclick="location.href='./php/info.php'">
 	</header>
-    	<iframe class="leftframe" src="left.php" scrolling="no"></iframe>
+    	<iframe class="leftframe" src="left.php" scrolling="yes"></iframe>
     	<div class="right">
 	   <form method="post" name="SQL_sendform">
 	      <h2>SQL</h2>
@@ -43,8 +43,8 @@ function h($str){                   //HTMLに文字列出力
 			<input class="right-in" type="reset" value="リセット" name="sql_reset" id="sql_reset">
 		</div>
 		</form>
-      <div id="log">
-        <h2>実行結果</h2>
+		<div id="log">
+		  <h2>実行結果</h2>
 
 <?php if(!empty($_POST['sql'])){           //SQL実行した場合?>       
           <?=h('実行SQL：' . $_POST['sql'])?>	
@@ -73,8 +73,8 @@ function h($str){                   //HTMLに文字列出力
     <?php }   //else end  ?>
           
 <?php } ?>          
-		</div>
-</div>
+			</div>
+	</div>
 
 </body>
 </html>
