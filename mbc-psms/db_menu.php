@@ -33,7 +33,7 @@ function h($str){                   //HTMLに文字列出力
 	<h1>MBC-PSMS  --PostgreSQLManegmentStudio--</h1>
         <input class="left-in" type="submit" name="info_menu" value="ユーザ情報" onclick="location.href='./php/info.php'">
 	</header>
-    	<iframe class="leftframe" src="left.php"></iframe>
+    	<iframe class="leftframe" src="left.php" scrolling="yes"></iframe>
     	<div class="right">
 	   <form method="post" name="SQL_sendform">
 	      <h2>SQL</h2>
