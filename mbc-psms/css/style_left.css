@@ -8,11 +8,11 @@
 }
 
 html{
-  height:auto;
+  height:100%;
 }
 
 body {
-  height: auto;
+  height: 100%;
   background-color: #000044;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
