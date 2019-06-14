@@ -8,6 +8,10 @@ $prepare = new Common();
 
 $furu = $prepare->db_sql("select * from user_info;");
 
+if ($furu == null){
+     $prepare->db_sql("create table user_info (id varchar PRIMARY KEY, name varchar NOT NULL, hash varchar NOT NULL)");
+}
+
 if (isset($_POST["login"])) {
 
    //if (!empty($_POST['id']) && !empty($_POST['password'])) {
