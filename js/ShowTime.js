@@ -5,7 +5,8 @@ var sec = 0;
 var TimeStr = "00:00";
 var NowStatus = null;
 var usability = document.getElementById('usability');
-var VisualizeTime = document.getElementById('time');
+var VisualizeTime1 = document.getElementById('time1');
+var VisualizeTime2 = document.getElementById('time2');
 var VisualStatus = null;
 
 showtime();
@@ -15,7 +16,8 @@ function showtime(){
         StatusRequest(NowStatus).then(
             TimeRequest(time).then(
                 TimePulus().then(
-                    VisualizeTime.innerHTML = TimeStr
+                    VisualizeTime1.innerHTML = TimeStr,
+                    VisualizeTime2.innerHTML = TimeStr
                 )
             )
         )
