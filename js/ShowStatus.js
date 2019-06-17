@@ -5,23 +5,19 @@ function showstatus(){
   ]).then(        //すべて上記が正常終了した場合に処理開始
     success => {        //resolveが代入される
       var status = JSON.parse(success);
-      var vacancy1 = document.getElementById('vacancy1');
-      var vacancy2 = document.getElementById('vacancy2');
+      var vacancy = document.getElementById('vacancy');
       var favicon = document.getElementById('favicon');
       switch(status){     //statusの値でcaseで分岐
         case  0:
-          vacancy1.src = "./img/free.png";
-          vacancy2.src = "./img/free.png";
+          vacancy.src = "./img/free.png";
           favicon.href = "./img/FaviconFree.png";
           break;
         case  1:
-          vacancy1.src = "./img/use.png";
-          vacancy2.src = "./img/use.png";
+          vacancy.src = "./img/use.png";
           favicon.href = "./img/FaviconUse.png";
           break;
         case -1:
-          vacancy1.src = "./img/not.jpg";
-          vacancy2.src = "./img/not.jpg";
+          vacancy.src = "./img/not.jpg";
           favicon.href = "./img/FaviconExit.png";
           break;
         default :
