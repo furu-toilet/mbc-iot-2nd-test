@@ -2,7 +2,7 @@ $(function(){
     // Ajax button click
     $('#sql_excute').on('click',function(){
         $.ajax({
-            url:'./php/SqlExcute.php',
+            url:'./php/test.php',
             type:'POST',
             data:{
                 'sql':$('#sql').val()
