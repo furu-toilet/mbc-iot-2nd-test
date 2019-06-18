@@ -38,12 +38,11 @@ function makeTable(data,tableId){
     
     if(data[0].length){
         rows.push(table.innerRow(-1));
-    }
-    
-    //表にヘッダーを設定
-    for(var key in data[0]){
-        cell = rows[0].insetCell(-1);
-        cell.appendChild(document.createTextNode(key);
+        //表にヘッダーを設定
+        for(var key in data[0]){
+            cell = rows[0].insetCell(-1);
+            cell.appendChild(document.createTextNode(key));
+        }
     }
         
     
