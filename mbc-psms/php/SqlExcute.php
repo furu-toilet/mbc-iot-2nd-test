@@ -3,7 +3,7 @@
 //Ajaxにて実行でSQL事項結果を2次元連想配列にて返す。
 //$data内に配置
 
-require_once "../Common.php";
+require_once "./Common.php";
 $db = new Common();
 
 header('Content-type: text/plain; charset= UTF-8');
