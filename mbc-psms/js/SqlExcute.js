@@ -35,7 +35,7 @@ function makeTable(data,tableId){
     var table = document.createElement("table");
     
     
-    
+    /*
     if(data[0].length){
         rows.push(table.insertRow(-1));
         //表にヘッダーを設定
@@ -44,7 +44,7 @@ function makeTable(data,tableId){
             cell.appendChild(document.createTextNode(key));
         }
     }
-        
+    */
     
     //表に2次元配列の要素を格納
     for(i = 1; i < data.length; i++){
