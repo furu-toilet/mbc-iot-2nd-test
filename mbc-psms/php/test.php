@@ -6,7 +6,7 @@ $rows = [
     [7,8,9]
 ];
 
-echo $rows;
+echo json_encode( $rows );
 
 
 
