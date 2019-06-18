@@ -37,10 +37,10 @@ function makeTable(data,tableId){
     
     
     if(data[0].length){
-        rows.push(table.innerRow(-1));
+        rows.push(table.insertRow(-1));
         //表にヘッダーを設定
         for(var key in data[0]){
-            cell = rows[0].insetCell(-1);
+            cell = rows[0].insertCell(-1);
             cell.appendChild(document.createTextNode(key));
         }
     }
@@ -48,9 +48,9 @@ function makeTable(data,tableId){
     
     //表に2次元配列の要素を格納
     for(i = 1; i < data.length; i++){
-        rows.push(table.innerRow(-1));      //行の追加　※縦方向
+        rows.push(table.insertRow(-1));      //行の追加　※縦方向
         for(j = 1; j < data[0].length; j++){
-            cell = rows[i].insetCell(-1);    //行に対して項目を追加　※横方向
+            cell = rows[i].insertCell(-1);    //行に対して項目を追加　※横方向
             cell.appendChild(documet.createTextNode(data[i][j]));   //データの追加
         }    
     }
