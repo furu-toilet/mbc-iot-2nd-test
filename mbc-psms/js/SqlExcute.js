@@ -31,7 +31,7 @@ $(function(){
 //表の動的作成
 function makeTable(data,tableId){
     //表の作成開始
-    var rows[];
+    var rows  = [];
     var table = document.createElement("table");
     
     
