@@ -40,8 +40,9 @@ function h($str){                   //HTMLに文字列出力
 	      <h2>SQL</h2>
 		<textarea class="sendarea" name="sql"></textarea><br>
 		<div class="right-inputarea">
-			<input class="right-in" type="button" value="実行" name="sql_submit" id="sql_excute">
+			<!--input class="right-in" type="button" value="実行" name="sql_submit" id="sql_excute"-->
 			<input class="right-in" type="reset" value="リセット" name="sql_reset" id="sql_reset">
+			<button id="sql_excute">実行</button>
 		</div>
 		</form>
             <div id="log"></div>
