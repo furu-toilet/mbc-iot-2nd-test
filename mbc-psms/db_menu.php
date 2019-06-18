@@ -26,6 +26,8 @@ function h($str){                   //HTMLに文字列出力
 		<title>PSMS  PostgreSQLManegmentStudio</title>
 		<link rel="stylesheet" href="./css/style_db_menu.css">
 		<link rel="icon" type="image/png" href="../img/CloudDatabase.png" sizes="16x16" id="favicon">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/SqlExcute.js"></script>
 	</head>
 <body>
 	<header>
