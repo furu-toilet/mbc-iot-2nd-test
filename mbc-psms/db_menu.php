@@ -38,7 +38,7 @@ function h($str){                   //HTMLに文字列出力
     	<div class="right">
 	   <form method="post" name="SQL_sendform">
 	      <h2>SQL</h2>
-		<textarea class="sendarea" name="sql"></textarea><br>
+		<textarea class="sendarea" name="sql" id="sql"></textarea><br>
 		<div class="right-inputarea">
 			<!--input class="right-in" type="submit" value="実行" name="sql_submit" id="sql_excute"-->
 			<input class="right-in" type="reset" value="リセット" name="sql_reset" id="sql_reset">
