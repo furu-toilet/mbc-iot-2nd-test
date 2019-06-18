@@ -6,7 +6,7 @@
 require_once "./Common.php";
 $db = new Common();
 
-header('Content-type: text/plain; charset= UTF-8');
+//header('Content-type: text/plain; charset= UTF-8');
 
 if(isset($_POST['sql'])){
     $sql = $_POST['sql'];
@@ -20,7 +20,7 @@ if(isset($_POST['sql'])){
         //実行結果がNull値以外であればそのまま返す。
     }
 
-    echo data;
+    echo $data;
 }else{
     echo 'FAIL TO AJAX REQUEST';
 }
