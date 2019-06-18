@@ -12,7 +12,7 @@ $(function(){
         .done( (data) => {
             //$('.result').html(data);
             //$('.sql-result').val(data);
-            makeTable(JSON.parse(data,"log");
+            makeTable(JSON.parse(data),"log");
             console.log(data);
         })
         // Ajaxリクエストが失敗した時発動
