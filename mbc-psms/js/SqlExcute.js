@@ -39,7 +39,7 @@ function makeTable(data,tableId){
     for(let x in data){
         rows.push(table.insertRow(-1));
         //表にヘッダーを設定
-        for(let y in data){
+        for(let y in data[x]){
             cell = rows[x].insertCell(-1);
             cell.appendChild(document.createTextNode(y));
             cell.style.backgroundColor = "#1727ea"; // ヘッダ行
