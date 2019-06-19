@@ -44,6 +44,7 @@ function makeTable(data,tableId){
             cell = rows[x].insertCell(-1);
             cell.appendChild(document.createTextNode(y));
         }
+        break;
     }
     
     
