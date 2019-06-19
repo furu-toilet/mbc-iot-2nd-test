@@ -53,7 +53,15 @@ function makeTable(data,tableId){
         for(let j in data[i]){
             cell=rows[i].insertCell(-1);
             cell.appendChild(document.createTextNode(data[i][j]));
-        }    
+            // 背景色の設定
+
+            if(i==0){
+                cell.style.backgroundColor = "#bbb"; // ヘッダ行
+            }else{
+                cell.style.backgroundColor = "#ddd"; // ヘッダ行以外
+            }
+
+        }
     }
     //指定したdiv要素に表を加える
     document.getElementById(tableId).appendChild(table);
