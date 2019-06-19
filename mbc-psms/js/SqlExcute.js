@@ -1,3 +1,4 @@
+/*
 $(function(){
     // Ajax button click
     $('#sql_excute').on('click',function(){
@@ -27,6 +28,21 @@ $(function(){
         });
     });
 });
+*/
+
+window.onload = function(){ 
+// 表のデータ
+var data = [[11, 12, 13],
+            [21, 22, 23],
+            [31, 32, 33],
+            [41, 42, 43]];
+
+// 表の動的作成
+makeTable(data,"log");
+};
+
+
+
 
 //表の動的作成
 function makeTable(data,tableId){
