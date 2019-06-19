@@ -20,7 +20,7 @@ if(isset($_POST['sql'])){
         //実行結果がNull値以外であればそのまま返す。
     }
 
-    echo $data;
+    echo json_encode( $data );
 }else{
     echo 'FAIL TO AJAX REQUEST';
 }
