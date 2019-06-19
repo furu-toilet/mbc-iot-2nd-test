@@ -50,7 +50,7 @@ function makeTable(data,tableId){
     //表に2次元配列の要素を格納
     for(let i in data){
         rows.push(table.insertRow(-1));      //行の追加　※縦方向
-        for(let j in data[j]){
+        for(let j in data[i]){
             cell = rows[i].insertCell(-1);    //行に対して項目を追加　※横方向
             cell.appendChild(document.createTextNode(data[i][j]));   //データの追加
         }    
