@@ -34,14 +34,14 @@ function makeTable(data,tableId){
     //表の作成開始
     var rows  = [];
     var table = document.createElement("table");
+    var i = 0;
     
     
-    
-    for(let x in data){
+    for(let i in data){
         rows.push(table.insertRow(-1));
         //表にヘッダーを設定
         for(let y in data){
-            cell = rows[x].insertCell(-1);
+            cell = rows[i].insertCell(-1);
             cell.appendChild(document.createTextNode(y));
         }
         break;
