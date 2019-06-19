@@ -48,7 +48,7 @@ function makeTable(data,tableId){
     
     //表に2次元配列の要素を格納
     for(i = 1; i < data.length; i++){
-        rows.push(table.insertRow(-1));      //行の追加　※縦方向
+        rows.push(table.insertRow(0));      //行の追加　※縦方向
         for(j = 1; j < data[0].length; j++){
             cell = rows[i].insertCell(1);    //行に対して項目を追加　※横方向
             cell.appendChild(documet.createTextNode(data[i][j]));   //データの追加
