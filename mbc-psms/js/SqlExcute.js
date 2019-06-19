@@ -52,18 +52,11 @@ function makeTable(data,tableId){
     //表に2次元配列の要素を格納
     for(let i in data){
         rows.push(table.insertRow(-1));  // 行の追加
-        rows.push(table.insertRow(-1));  // 行の追加
         for(let j in data[i]){
             cell=rows[i].insertCell(-1);
             cell.appendChild(document.createTextNode(data[i][j]));
             // 背景色の設定
-
-            if(i==0){
-                cell.style.backgroundColor = "#1727ea"; // ヘッダ行
-            }else{
-                cell.style.backgroundColor = "#878fed"; // ヘッダ行以外
-            }
-
+            cell.style.backgroundColor = "#878fed"; // ヘッダ行以外
         }
     }
     //指定したdiv要素に表を加える
