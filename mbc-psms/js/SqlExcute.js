@@ -37,7 +37,7 @@ function makeTable(data,tableId){
     
     
     for(let x in data){
-        rows.push(table.insertRow(-1));
+        rows.push(table.insertRow(1));
         //表にヘッダーを設定
         for(let y in data){
             cell = rows[x].insertCell(-1);
