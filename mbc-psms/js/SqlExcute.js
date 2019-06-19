@@ -34,14 +34,13 @@ function makeTable(data,tableId){
     //表の作成開始
     var rows  = [];
     var table = document.createElement("table");
-    var i = 0;
     
     
-    for(let i in data){
+    for(let x in data){
         rows.push(table.insertRow(-1));
         //表にヘッダーを設定
         for(let y in data){
-            cell = rows[i].insertCell(-1);
+            cell = rows[x].insertCell(-1);
             cell.appendChild(document.createTextNode(y));
         }
         break;
@@ -52,8 +51,8 @@ function makeTable(data,tableId){
     for(let i in data){
         rows.push(table.insertRow(-1));  // 行の追加
         for(let j in data[i]){
-            cell=rows[i].insertCell(-1);
-            cell.appendChild(document.createTextNode(data[i][j]));
+            cell=rows[i+1].insertCell(-1);
+            cell.appendChild(document.createTextNode(data[i+1][j]));
             // 背景色の設定
 
             if(i==0){
