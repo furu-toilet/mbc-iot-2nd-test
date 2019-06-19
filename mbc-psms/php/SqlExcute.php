@@ -18,11 +18,7 @@ if(isset($_POST['sql'])){
         $data = "該当データなし";
     }else {
         //実行結果がNull値以外であればそのまま返す。
-        foreach($data as $key => $_){
-            $header += $key;
-        }
     }
-    $data = $header + $data;
     echo json_encode( $data );
 }else{
     echo 'FAIL TO AJAX REQUEST';
