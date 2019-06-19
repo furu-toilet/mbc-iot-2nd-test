@@ -36,16 +36,16 @@ function makeTable(data,tableId){
     var table = document.createElement("table");
     
     
-    /*
-    if(data[0].length){
+    
+    for(let x in data){
         rows.push(table.insertRow(-1));
         //表にヘッダーを設定
-        for(var key in data[0]){
-            cell = rows[0].insertCell(-1);
-            cell.appendChild(document.createTextNode(key));
+        for(let y in data){
+            cell = rows[x].insertCell(-1);
+            cell.appendChild(document.createTextNode(y));
         }
     }
-    */
+    
     
     //表に2次元配列の要素を格納
     for(let i in data){
@@ -56,9 +56,9 @@ function makeTable(data,tableId){
             // 背景色の設定
 
             if(i==0){
-                cell.style.backgroundColor = "#bbb"; // ヘッダ行
+                cell.style.backgroundColor = "#1727ea"; // ヘッダ行
             }else{
-                cell.style.backgroundColor = "#ddd"; // ヘッダ行以外
+                cell.style.backgroundColor = "#878fed"; // ヘッダ行以外
             }
 
         }
