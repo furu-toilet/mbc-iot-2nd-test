@@ -43,13 +43,14 @@ function makeTable(data,tableId){
             cell = rows[x].insertCell(-1);
             cell.appendChild(document.createTextNode(y));
         }
+        cell.style.backgroundColor = "#1727ea"; // ヘッダ行
         break;
     }
-    
+    //指定したdiv要素に表を加える
+    document.getElementById(tableId).appendChild(table);
     
     //表に2次元配列の要素を格納
     for(let i in data){
-        i++;
         rows.push(table.insertRow(-1));  // 行の追加
         for(let j in data[i]){
             cell=rows[i].insertCell(-1);
