@@ -40,7 +40,7 @@ function makeTable(data,tableId){
         rows.push(table.insertRow(1));
         //表にヘッダーを設定
         for(let y in data){
-            cell = rows[x].insertCell(-1);
+            cell = rows[x].insertCell(1);
             cell.appendChild(document.createTextNode(y));
             cell.style.backgroundColor = "#1727ea"; // ヘッダ行
         }
@@ -53,7 +53,7 @@ function makeTable(data,tableId){
     for(let i in data){
         rows.push(table.insertRow(1));  // 行の追加
         for(let j in data[i]){
-            cell=rows[i].insertCell(-1);
+            cell=rows[i].insertCell(1);
             cell.appendChild(document.createTextNode(data[i][j]));
             // 背景色の設定
 
