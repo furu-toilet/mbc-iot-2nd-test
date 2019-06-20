@@ -14,7 +14,7 @@ if(isset($_POST['sql'])){
     
     if($data == null){
         if($db->db_msg() == null){
-            $data = "正常終了:" + $sql;
+            $data = "OK";
             echo json_encode( $data );
         }else{
             $data = "ERR";
