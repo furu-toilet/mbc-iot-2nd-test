@@ -47,7 +47,7 @@ function makeTable(data,tableId){
         break;
     }
     //指定したdiv要素に表を加える
-    //document.getElementById(tableId).appendChild(table);
+    document.getElementById(tableId).appendChild(table);
     
     //表に2次元配列の要素を格納
     for(let i in data){
