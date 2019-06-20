@@ -28,7 +28,6 @@ $(function(){
 //表の動的作成
 function makeTable(data,tableId){
     //表の作成開始
-    data = JSON.parse(data);
     var rows  = [];
     var table = document.createElement("table");
     var cnt = 0;
@@ -37,6 +36,7 @@ function makeTable(data,tableId){
         ErrLog(sql);
     }else{
         //表に2次元配列の要素を格納
+        data = JSON.parse(data);
         for(let i in data){
             rows.push(table.insertRow(-1));  // 行の追加
             if(i == 0){
