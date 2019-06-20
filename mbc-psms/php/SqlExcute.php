@@ -15,7 +15,7 @@ if(isset($_POST['sql'])){
     $data = $db->db_sql($sql);
     
     if($data == null){
-        $data = "該当データなし";
+        $data = ["実行結果"["該当データなし"]];
     }else {
         //実行結果がNull値以外であればそのまま返す。
     }
