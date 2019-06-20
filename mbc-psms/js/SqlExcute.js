@@ -61,7 +61,7 @@ function makeTable(data,tableId){
            }
         }
         for(let j in data[i]){
-            cell=rows[i].insertCell(-1);
+            cell=rows[i+1].insertCell(-1);
             cell.appendChild(document.createTextNode(data[i][j]));
             // 背景色の設定
             cell.style.backgroundColor = "#878fed"; // ヘッダ行以外
