@@ -33,7 +33,7 @@ function makeTable(data,tableId){
     var cnt = 0;
     var sql = document.getElementById("sql").value;
     if(data == 0 || data == null){
-        ErrLog(sql);
+        ErrMsg(sql);
     }else{
         //表に2次元配列の要素を格納
         data = JSON.parse(data);
