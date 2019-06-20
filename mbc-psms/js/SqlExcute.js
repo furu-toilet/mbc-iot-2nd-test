@@ -30,7 +30,7 @@ function makeTable(data,tableId){
     var rows  = [];
     var table = document.createElement("table");
     var cnt = 0;
-    const var sql = document.getElementById("sql");
+    var sql = document.getElementById("sql");
     if(data == 0 || data == null){
         ErrLog(sql);
     }else{
