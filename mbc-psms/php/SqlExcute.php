@@ -19,7 +19,7 @@ if(isset($_POST['sql'])){
         echo json_encode( $db->db_msg() );
     }else{
         //正常終了時
-        //echo json_encode( $data );
+        echo json_encode( $data );
     }
     //echo json_encode( $data );
 }else{
