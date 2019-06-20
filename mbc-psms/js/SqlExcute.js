@@ -53,7 +53,7 @@ function makeTable(data,tableId){
     for(let i in data){
         rows.push(table.insertRow(-1));  // 行の追加
         if(i == 0){
-           for(let x data[i]){
+           for(let x in data[i]){
                cell = rows[i].insertCell(-1);
                cell.appendChild(document.createTextNode(x));
                cell.style.backgroundColor = "#1727ea"; // ヘッダ行
