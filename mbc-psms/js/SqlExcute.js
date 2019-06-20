@@ -10,16 +10,14 @@ $(function(){
         })
         // Ajaxリクエストが成功した時発動
         .done( (data) => {
-            //$('.result').html(data);
-            //$('.sql-result').val(data);
             makeTable(JSON.parse(data),"log");
-            //console.log(data);
+            if(data == 0 || data == null){
+                ErrLog($('.sql').val());
+            }
         })
         // Ajaxリクエストが失敗した時発動
         .fail( (data) => {
-            //$('.result').html(data);
-            $('.sql-result').val(data);
-            //console.log(data);
+            //$('.sql-result').val(data);
         })
         // Ajaxリクエストが成功・失敗どちらでも発動
         .always( (data) => {
@@ -57,4 +55,33 @@ function makeTable(data,tableId){
     }
     //指定したdiv要素に表を加える
     document.getElementById(tableId).appendChild(table);
+}
+
+
+//エラーメッセージの取得
+function ErrMsg(){
+    $.ajax({
+        url:'./php/ErrMsg.php',
+        type:'POST',
+        data:{
+            'sql':$('#sql').val()
+        }
+    })
+    // Ajaxリクエストが成功した時発動
+    .done( (data) => {
+        $('.msg').val(data);
+    })
+    // Ajaxリクエストが失敗した時発動
+    .fail( (data) => {
+        //$('.sql-result').val(data);
+    })
+    // Ajaxリクエストが成功・失敗どちらでも発動
+    .always( (data) => {
+
+    });
+
+
+
+
+
 }
