@@ -1,4 +1,5 @@
 <?php
+/*
 $result = null;
 $msg = null;
 
@@ -15,7 +16,7 @@ if(isset($_POST['sql_submit'])){    //実行ボタン後の処理
 function h($str){                   //HTMLに文字列出力
 	return htmlspecialchars($str,ENT_QUOTES,'UTF-8');
 }
-
+*/
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +44,7 @@ function h($str){                   //HTMLに文字列出力
 		<div class="right-inputarea">
 			<input class="right-in" type="button" value="実行" id="sql_excute">
 			<!--input class="right-in" type="submit" value="実行" name="sql_submit" id="sql_excute"-->
-			<input class="right-in" type="button" value="リセット" name="sql_reset" id="sql_reset">
+			<input class="right-in" type="reset" value="リセット" name="sql_reset" id="sql_reset">
 			<!--button class="right-in" id="sql_excute">実行</button-->
 		</div>
 		<h2>エラーログ</h2>
