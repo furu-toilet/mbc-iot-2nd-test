@@ -13,9 +13,9 @@ if(isset($_POST['sql'])){
     $data = $db->db_sql($sql);
     
     if($data == null){
-        //データなしの場合
-        //$data = ["実行結果"=>["該当データなし"]];
-        //$data = null;
+        if($db->db_msg() == null){
+            $data = "正常終了";
+        }
     }else{
         //正常終了時
         echo json_encode( $data );
