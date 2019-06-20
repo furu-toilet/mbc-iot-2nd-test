@@ -32,7 +32,7 @@ function makeTable(data,tableId){
     var table = document.createElement("table");
     var cnt = 0;
     var sql = document.getElementById("sql").value;
-    if(data == 0 || data == null){
+    if(data == null){
         ErrMsg(sql);
     }else{
         //表に2次元配列の要素を格納
