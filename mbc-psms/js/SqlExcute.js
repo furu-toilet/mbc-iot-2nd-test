@@ -73,7 +73,7 @@ function ErrMsg(sql){
     })
     // Ajaxリクエストが成功した時発動
     .done( (data) => {
-        document.getElementById("msg").value(data);
+        document.getElementById("msg").value = JSON.parse(data);
     })
     // Ajaxリクエストが失敗した時発動
     .fail( (data) => {
