@@ -11,9 +11,6 @@ $(function(){
         // Ajaxリクエストが成功した時発動
         .done( (data) => {
             makeTable(JSON.parse(data),"log");
-            if(data == 0 || data == null){
-                ErrLog($('.sql').val());
-            }
         })
         // Ajaxリクエストが失敗した時発動
         .fail( (data) => {
@@ -33,33 +30,38 @@ function makeTable(data,tableId){
     var rows  = [];
     var table = document.createElement("table");
     var cnt = 0;
-    //表に2次元配列の要素を格納
-    for(let i in data){
-        rows.push(table.insertRow(-1));  // 行の追加
-        if(i == 0){
-           for(let x in data[i]){
-               cell = rows[cnt].insertCell(-1);
-               cell.appendChild(document.createTextNode(x));
-               cell.style.backgroundColor = "#1727ea"; // ヘッダ行
-               rows.push(table.insertRow(-1));
-           }
-           cnt++;
+    const var sql = document.getElementById("sql");
+    if(data == 0 || data == null){
+        ErrLog(sql);
+    }else{
+        //表に2次元配列の要素を格納
+        for(let i in data){
+            rows.push(table.insertRow(-1));  // 行の追加
+            if(i == 0){
+               for(let x in data[i]){
+                   cell = rows[cnt].insertCell(-1);
+                   cell.appendChild(document.createTextNode(x));
+                   cell.style.backgroundColor = "#1727ea"; // ヘッダ行
+                   rows.push(table.insertRow(-1));
+               }
+               cnt++;
+            }
+            for(let j in data[i]){
+                cell=rows[cnt].insertCell(-1);
+                cell.appendChild(document.createTextNode(data[i][j]));
+                // 背景色の設定
+                cell.style.backgroundColor = "#878fed"; // ヘッダ行以外
+            }
+            cnt++;
         }
-        for(let j in data[i]){
-            cell=rows[cnt].insertCell(-1);
-            cell.appendChild(document.createTextNode(data[i][j]));
-            // 背景色の設定
-            cell.style.backgroundColor = "#878fed"; // ヘッダ行以外
-        }
-        cnt++;
+        //指定したdiv要素に表を加える
+        document.getElementById(tableId).appendChild(table);
     }
-    //指定したdiv要素に表を加える
-    document.getElementById(tableId).appendChild(table);
 }
 
 
 //エラーメッセージの取得
-function ErrMsg(){
+function ErrMsg(sql){
     $.ajax({
         url:'./php/ErrMsg.php',
         type:'POST',
@@ -69,7 +71,7 @@ function ErrMsg(){
     })
     // Ajaxリクエストが成功した時発動
     .done( (data) => {
-        $('.msg').val(data);
+        retuen data;
     })
     // Ajaxリクエストが失敗した時発動
     .fail( (data) => {
@@ -79,9 +81,4 @@ function ErrMsg(){
     .always( (data) => {
 
     });
-
-
-
-
-
 }
