@@ -34,8 +34,7 @@ function makeTable(data,tableId){
     //表の作成開始
     var rows  = [];
     var table = document.createElement("table");
-    
-    
+    /*
     for(let x in data){
         rows.push(table.insertRow(-1));
         //表にヘッダーを設定
@@ -46,12 +45,21 @@ function makeTable(data,tableId){
         }
         break;
     }
+    */
     //指定したdiv要素に表を加える
-    document.getElementById(tableId).appendChild(table);
+    //document.getElementById(tableId).appendChild(table);
     
     //表に2次元配列の要素を格納
     for(let i in data){
         rows.push(table.insertRow(-1));  // 行の追加
+        if(i == 0){
+           for(let x data[i]){
+               cell = rows[i].insertCell(-1);
+               cell.appendChild(document.createTextNode(x));
+               cell.style.backgroundColor = "#1727ea"; // ヘッダ行
+               rows.push(table.insertRow(-1));
+           }
+        }
         for(let j in data[i]){
             cell=rows[i].insertCell(-1);
             cell.appendChild(document.createTextNode(data[i][j]));
@@ -61,5 +69,4 @@ function makeTable(data,tableId){
     }
     //指定したdiv要素に表を加える
     document.getElementById(tableId).appendChild(table);
-    
 }
