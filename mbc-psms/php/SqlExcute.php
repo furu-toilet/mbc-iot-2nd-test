@@ -14,7 +14,7 @@ if(isset($_POST['sql'])){
     
     if($data == null){
         if($db->db_msg() == null){
-            $data = "正常終了";
+            $data = "正常終了:" + $sql;
         }
     }else{
         //正常終了時
