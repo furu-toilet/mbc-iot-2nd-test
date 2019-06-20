@@ -15,6 +15,7 @@ if(isset($_POST['sql'])){
     if($data == null){
         if($db->db_msg() == null){
             $data = "正常終了:" + $sql;
+            echo json_encode( $data );
         }
     }else{
         //正常終了時
