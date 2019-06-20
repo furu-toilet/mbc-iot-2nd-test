@@ -46,8 +46,9 @@ function h($str){                   //HTMLに文字列出力
 			<!--button class="right-in" id="sql_excute">実行</button-->
 		</div>
 		<h2>エラーログ</h2>
-		<textarea id="msg"></textarea><br>
-		<div class="errlog-area" id="log"></div>
+		<textarea class="errlog-area" id="msg"></textarea><br>
+		<h2>実行結果</h2>
+		<div id="log"></div>
 		</form>
 	</div>
 
