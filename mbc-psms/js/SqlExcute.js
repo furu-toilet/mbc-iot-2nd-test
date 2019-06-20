@@ -32,8 +32,11 @@ function makeTable(data,tableId){
     var table = document.createElement("table");
     var cnt = 0;
     var sql = document.getElementById("sql").value;
-    if(data == null){
+    if(data == "ERR"){
         ErrMsg(sql);
+    }else if(){
+        
+        
     }else{
         //表に2次元配列の要素を格納
         data = JSON.parse(data);
