@@ -45,8 +45,8 @@ function h($str){                   //HTMLに文字列出力
 			<input class="right-in" type="reset" value="リセット" name="sql_reset" id="sql_reset">
 			<!--button class="right-in" id="sql_excute">実行</button-->
 		</div>
+		<textarea id="msg"></textarea><br>
 		<div id="log"></div>
-		<textarea id="msg"></textarea>
 		</form>
 	</div>
 
