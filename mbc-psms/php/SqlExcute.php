@@ -21,7 +21,7 @@ if(isset($_POST['sql'])){
     array_push($result,$header);
     */
     if($data == null){
-        $data = ["実行結果"["該当データなし"]];
+        $data = ["実行結果"=>["該当データなし"]];
     }else {
         //実行結果がNull値以外であればそのまま返す。
         /*foreach($data as $row){
