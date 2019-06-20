@@ -10,16 +10,25 @@ $db = new Common();
 
 if(isset($_POST['sql'])){
     $sql = $_POST['sql'];
-    $header = [];
+    $result= array();
+    $header = array();
     
     $data = $db->db_sql($sql);
+    
+    foreach($data[0] as $h => $_){
+        array_push($header,$h)
+    }
+    array_push($result,$header);
     
     if($data == null){
         $data = ["実行結果"["該当データなし"]];
     }else {
         //実行結果がNull値以外であればそのまま返す。
+        foreach($data as $row){
+            array_push($result,$row);
+        }
     }
-    echo json_encode( $data );
+    echo json_encode( $result );
 }else{
     echo 'FAIL TO AJAX REQUEST';
 }
