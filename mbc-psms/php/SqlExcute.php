@@ -17,9 +17,9 @@ if(isset($_POST['sql'])){
         $data = ["実行結果":["該当データなし"]];
     }else{
         //正常終了時
-        echo json_encode( $data );
+        //echo json_encode( $data );
     }
-    //echo json_encode( $data );
+    echo json_encode( $data );
 }else{
     echo 'FAIL TO AJAX REQUEST';
 }
