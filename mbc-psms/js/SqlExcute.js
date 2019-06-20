@@ -13,13 +13,13 @@ $(function(){
             //$('.result').html(data);
             //$('.sql-result').val(data);
             makeTable(JSON.parse(data),"log");
-            console.log(data);
+            //console.log(data);
         })
         // Ajaxリクエストが失敗した時発動
         .fail( (data) => {
             //$('.result').html(data);
             $('.sql-result').val(data);
-            console.log(data);
+            //console.log(data);
         })
         // Ajaxリクエストが成功・失敗どちらでも発動
         .always( (data) => {
@@ -34,20 +34,6 @@ function makeTable(data,tableId){
     //表の作成開始
     var rows  = [];
     var table = document.createElement("table");
-    /*
-    for(let x in data){
-        rows.push(table.insertRow(-1));
-        //表にヘッダーを設定
-        for(let y in data[x]){
-            cell = rows[x].insertCell(-1);
-            cell.appendChild(document.createTextNode(y));
-            cell.style.backgroundColor = "#1727ea"; // ヘッダ行
-        }
-        break;
-    }
-    */
-    //指定したdiv要素に表を加える
-    //document.getElementById(tableId).appendChild(table);
     var cnt = 0;
     //表に2次元配列の要素を格納
     for(let i in data){
