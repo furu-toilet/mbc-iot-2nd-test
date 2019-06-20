@@ -1,12 +1,24 @@
 <?php
+/*
+トイレ端末からの自動ログイン機能を持った
+トイレ状態遷移ファイル
+URLからパラメータ-を与えて、ログインを行う。
+パラメーターの取得はURLからGETで行う。
+パラメーターはIDとhashのみとする（暫定）
+※今後、トイレ状態も付加出来たらいいな...
+**下記URLのサンプル**
+https://mbc-iot-2nd.herokuapp.com/rasberrypie/SetStatusTest.php/?Terminal=testterminal&hash=testhash
+?以降がパラメーターであり、項目は＆で区切る。
+*/
+
 if(isset($_GET['Terminal'])){
     $TerminalID = $_GET['Terminal'];        //パラメータから端末ID取得
 }
 if(isset($_GET['hash'])){
     $hash = $_GET['hash'];        //パラメータから端末ID取得
 }
-echo $TerminalID;
-echo $hash;
+//echo $TerminalID;
+//echo $hash;
 
 /*
 require_once "../php/Common.php";      //～～おまじない～～
