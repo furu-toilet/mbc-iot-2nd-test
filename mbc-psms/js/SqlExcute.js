@@ -71,7 +71,7 @@ function ErrMsg(sql){
     })
     // Ajaxリクエストが成功した時発動
     .done( (data) => {
-        retuen data;
+        getElementById("msg").value(data);
     })
     // Ajaxリクエストが失敗した時発動
     .fail( (data) => {
