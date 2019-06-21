@@ -63,6 +63,10 @@ foreach($tbal as $value){		//配列を調整
 		document.getElementById("RealtimeClockArea2").innerHTML = msg;
 	}
 	setInterval('showClock2()',1000);
+	 
+	function ReloadTable(){
+		location.reload();
+	}
   </script>
   <div id="left">
     <h3>現在の時刻</h3>
@@ -70,8 +74,8 @@ foreach($tbal as $value){		//配列を調整
     <div id="file">
       <h3>ファイル</h3>
       <div class="button">
-        <input class="left-in" type="submit" name="export" value="エクスポート">
-        <input class="left-in" type="submit" name="import" value="インポート">
+        <input class="left-in" type="button" name="export" value="更新" onClick="">
+        <input class="left-in" type="button" name="import" value="テスト..">
       </div>
     </div>
     <div class="space"></div>
