@@ -32,10 +32,10 @@ function makeTable(data,tableId){
     var table = document.createElement("table");
     var cnt = 0;
     var sql = document.getElementById("sql").value;
-    if(data == "ERR"){
+    if(JSON.parse(data) == "ERR"){
         ErrMsg(sql);
-    }else if(data == "OK"){
-        document.getElementById("msg").value == data;
+    }else if(JSON.parse(data) == "OK"){
+        document.getElementById("msg").value == "正常終了";
         
     }else{
         //表に2次元配列の要素を格納
