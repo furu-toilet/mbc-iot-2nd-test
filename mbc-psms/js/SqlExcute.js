@@ -34,8 +34,8 @@ function makeTable(data,tableId){
     var sql = document.getElementById("sql").value;
     if(data == "ERR"){
         ErrMsg(sql);
-    }else if(){
-        
+    }else if(data == "OK"){
+        document.getElementById("msg").value == data;
         
     }else{
         //表に2次元配列の要素を格納
