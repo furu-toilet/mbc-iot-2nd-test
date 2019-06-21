@@ -74,7 +74,7 @@ foreach($tbal as $value){		//配列を調整
     <div id="file">
       <h3>ファイル</h3>
       <div class="button">
-        <input class="left-in" type="button" name="export" value="更新" onClick="ReloadTable">
+        <input class="left-in" type="button" name="export" value="更新" onClick="ReloadTable()">
         <input class="left-in" type="button" name="import" value="テスト..">
       </div>
     </div>
