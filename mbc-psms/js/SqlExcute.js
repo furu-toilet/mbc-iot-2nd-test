@@ -35,7 +35,7 @@ function makeTable(data,tableId){
     if(JSON.parse(data) == "ERR"){
         ErrMsg(sql);
     }else if(JSON.parse(data) == "OK"){
-        document.getElementById("msg").value == "正常終了";
+        document.getElementById("msg").value = "正常終了";
         
     }else{
         //表に2次元配列の要素を格納
