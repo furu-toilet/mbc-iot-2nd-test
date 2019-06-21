@@ -11,19 +11,26 @@ https://mbc-iot-2nd.herokuapp.com/rasberrypie/SetStatusTest.php/?Terminal=testte
 ?以降がパラメーターであり、項目は＆で区切る。
 */
 
+require_once "../php/Common.php";      //～～おまじない～～
+$db = new Common();             //
+
 if(isset($_GET['Terminal'])){
-    $TerminalID = $_GET['Terminal'];        //パラメータから端末ID取得
+    $id = $_GET['Terminal'];        //パラメータから端末ID取得
 }
 if(isset($_GET['hash'])){
     $hash = $_GET['hash'];        //パラメータから端末ID取得
 }
-//echo $TerminalID;
+
+$sql = 'select "TerminalInfo" from id = ' . $id;
+
+
+//echo $id;
 //echo $hash;
 
-/*
-require_once "../php/Common.php";      //～～おまじない～～
-$db = new Common();             //
 
+
+
+/*
 $sql = 'SELECT "Status" 
         FROM "ToiletTerminal";';      //DBManagerからSQL文が決まったらここに入力！   現在のトイレの状態を取得するクエリ（実行結果：-1,0,1　のどれか）
 $status = $db->db_sql($sql);    //現在のトイレの情報を取得
