@@ -21,13 +21,11 @@ if(isset($_GET['hash'])){
     $hash = $_GET['hash'];        //パラメータから端末ID取得
 }
 
-$sql = 'select "TerminalInfo" from id = ' . $id;
+$sql = 'select "hash" from "TerminalInfo"where id = ' . $id;
 
+$DbHash = $db->db_sql($sql);    //DB側のhash値
 
-//echo $id;
-//echo $hash;
-
-
+/*  DBとパラメーターHash値の照合  */
 
 
 /*
