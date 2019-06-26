@@ -14,7 +14,7 @@ https://mbc-iot-2nd.herokuapp.com/rasberrypie/SetStatusTest.php/?Terminal=testte
 require_once "../php/Common.php";      //～～おまじない～～
 $db = new Common();             //
 $key = "mbctoilet";
-$flg = true;   //LoginFlg
+$flg = false;   //LoginFlg
 
 /*  アクセス端末のパラメータ情報取得  */
 if(isset($_GET['Terminal'])){
@@ -37,7 +37,7 @@ $dbhash = $db->db_sql($sql);    //DB側のhash値
 //OpenSSLにて
 if($dbhash != null){
     $dec_pass = openssl_decrypt($encpw,'AES-128-ECB',$key);  //暗号化されたPWを復号化(URLパラメータから取得したものを使用)
-    if(password_verify($dec_pass,$dbhash)){     //DBのhashをパラメーターから受け取ったパスワードでベリファイする。
+    if(password_verify($dec_pass,$dbhash['hash'])){     //DBのhashをパラメーターから受け取ったパスワードでベリファイする。
         //照合してOKならログインFLGをTrueに変更
         $flg = true;
     }
@@ -51,7 +51,7 @@ if($flg == true){
     $status = $db->db_sql($sql);    //現在のトイレの情報を取得
     if($status !== 1){   //在室ならDBを操作しない（誤作動の可能性を考慮）
         $sql = 'UPDATE "ToiletTerminal" SET 
-                       "Status" =  1,"UpdateTime"    = CURRENT_TimeStamp + \'9 hours\';';
+                       "Status" =  0,"UpdateTime"    = CURRENT_TimeStamp + \'9 hours\';';
         $db->db_sql($sql);    //状態のセット実行
 
         $sql = 'INSERT INTO "RuiInfo" ("TanmatsuInfo","Date","StartTime","EndTime","UsedTime")
