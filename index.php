@@ -1,6 +1,6 @@
 <?php
 
-header( "Location: https://mbc-iot-2nd.herokuapp.com/Index.html" ) ;
+header( "Location: https://test-mbc.herokuapp.com/Index.html" ) ;
 exit ;
 
 ?>
