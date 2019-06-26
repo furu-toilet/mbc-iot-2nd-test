@@ -4,6 +4,7 @@ $pass = $_GET['pass'];
 
 $encpass = openssl_encrypt($pass,'ACS-128-ECB',$key);
 
-//echo $encpass;
+echo $encpass;
 var_dump($encpass);
+console.log($encpass);
 ?>
