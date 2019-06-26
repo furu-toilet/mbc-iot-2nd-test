@@ -20,7 +20,7 @@ $flg = false;   //LoginFlg
 if(isset($_GET['Terminal'])){
     $id = $_GET['Terminal'];        //パラメータから端末ID取得
 }
-if(isset($_GET['hash'])){
+if(isset($_GET['encpw'])){
     $encpw = $_GET['encpw'];        //パラメータから端末ID取得
 }
 
