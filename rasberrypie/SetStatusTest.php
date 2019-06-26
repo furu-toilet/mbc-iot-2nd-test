@@ -7,7 +7,7 @@ URLからパラメータ-を与えて、ログインを行う。
 パラメーターはIDとhashのみとする（暫定）
 ※今後、トイレ状態も付加出来たらいいな...
 **下記URLのサンプル**
-https://mbc-iot-2nd.herokuapp.com/rasberrypie/SetStatusTest.php/?Terminal=testterminal&hash=testhash
+https://mbc-iot-2nd.herokuapp.com/rasberrypie/SetStatusTest.php/?Terminal=testterminal&encpw=testhash
 ?以降がパラメーターであり、項目は＆で区切る。
 */
 
