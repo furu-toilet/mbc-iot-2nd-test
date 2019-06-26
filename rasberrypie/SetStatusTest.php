@@ -14,7 +14,7 @@ https://mbc-iot-2nd.herokuapp.com/rasberrypie/SetStatusTest.php/?Terminal=testte
 require_once "../php/Common.php";      //～～おまじない～～
 $db = new Common();             //
 $key = "mbctoilet";
-$flg = false;   //LoginFlg
+$flg = true;   //LoginFlg
 
 /*  アクセス端末のパラメータ情報取得  */
 if(isset($_GET['Terminal'])){
@@ -31,7 +31,7 @@ $dbhash = $db->db_sql($sql);    //DB側のhash値
 /*  DBとパラメーターHash値の照合  */
 /*  password_verify($dbhash) 、OpenSSLを使用  */
 /*  共通暗号化キー"mbctoilet"で２重対策し、Verifyを行う。  */
-/*  なお、"mbctoilet"キーを使用するのは、通信取得したhashパラメーターに限定する。  */
+/*  なお、"mbctoilet"キーを使用するのは、通信取得したencpwパラメーターに限定する。  */
 //openssl_encrypt();  //暗号化
 
 //OpenSSLにて
