@@ -40,7 +40,7 @@ function makeTable(data,tableId){
         
     }else{
         //表に2次元配列の要素を格納
-        data = JSON.parse(data);
+        //data = JSON.parse(data);
         for(let i in data){
             rows.push(table.insertRow(-1));  // 行の追加
             if(i == 0){
@@ -77,7 +77,7 @@ function ErrMsg(sql){
     })
     // Ajaxリクエストが成功した時発動
     .done( (data) => {
-        document.getElementById("msg").value = JSON.parse(data);
+        document.getElementById("msg").value = /*JSON.parse(data);*/ data;
     })
     // Ajaxリクエストが失敗した時発動
     .fail( (data) => {
