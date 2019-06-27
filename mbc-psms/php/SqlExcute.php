@@ -16,10 +16,10 @@ if(isset($_POST['sql'])){
     if($data == null){
         if($db->db_msg() == null){
             //$data = "OK";
-            $data = array([0]=>"OK",[1]=>$db->db_msg());
+            $data = array([0]=>"OK" [1]=>$db->db_msg());
             echo json_encode( $data );
         }else{
-            $data = array([0]=>"ERR",[1]=>$db->db_msg());
+            $data = array([0]=>"ERR" [1]=>$db->db_msg());
             //$data = "ERR";
             echo json_encode( $data );
         }
