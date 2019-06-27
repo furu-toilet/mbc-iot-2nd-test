@@ -16,14 +16,15 @@ if(isset($_POST['sql'])){
     if($data == null){
         if($db->db_msg() == null){
             //$data = "OK";
-            $result = array([0] => "400",[1]=>$db->db_msg());
-            echo json_encode( $result );
-            //echo $result;
+            //$result = array([0] => "400",[1]=>$db->db_msg());
+            //echo json_encode( $result );
+            echo json_encode($data),json_encode("OK"),
         }else{
             $result = array([0]=> "100",[1]=>$db->db_msg());
             //$data = "ERR";
-            echo json_encode( $result );
+            //echo json_encode( $result );
             //echo $result;
+            echo json_encode($data),json_encode("ERR"),
         }
     }else{
         //正常終了時
