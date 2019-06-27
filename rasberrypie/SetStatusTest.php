@@ -38,7 +38,7 @@ $dbhash = $db->db_sql($sql);    //DB側のhash値
 if($dbhash != null){
     $dec_pass = openssl_decrypt($encpw,'AES-128-ECB',$key);  //暗号化されたPWを復号化(URLパラメータから取得したものを使用)
     echo $dec_pass;
-    echo $dbhash['hash'];
+    var_dump( $dbhash );
     if(password_verify($dec_pass,$dbhash['hash'])){     //DBのhashをパラメーターから受け取ったパスワードでベリファイする。
         //照合してOKならログインFLGをTrueに変更
         $flg = true;
