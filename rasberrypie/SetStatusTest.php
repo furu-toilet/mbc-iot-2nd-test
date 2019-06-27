@@ -40,7 +40,7 @@ if($dbhash != null){
     echo $dec_pass;
     var_dump( $dbhash[0]['hash']);
     //if(password_verify($dec_pass,$dbhash[0]['hash'])){     //DBのhashをパラメーターから受け取ったパスワードでベリファイする。
-    if(password_verify('furu','$2y$10$Vqgcn6d8wdtVYuXI7Ph/JuFI9UsQLbWXfyYdelVnQSdQh6YZsa6Om')){
+    if(password_verify('furu','$2y$10$yrmgqoOA5cHjcipeACIpsuNGr.OHiVIwImVigdRY2aQCrIRGSZEJ.')){
         //照合してOKならログインFLGをTrueに変更
         echo "flgTrue!!!";
         $flg = true;
