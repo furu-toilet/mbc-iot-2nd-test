@@ -34,7 +34,7 @@ function makeTable(data,tableId){
     var sql = document.getElementById("sql").value;
     if(JSON.parse(data[0]) == "ERR"){
         //ErrMsg(sql);                              //※※※変更箇所
-        document.getElementById("msg").value = data[1];
+        document.getElementById("msg").value = JSON.parse(data[1]);
     }else if(JSON.parse(data[0]) == "OK"){
         document.getElementById("msg").value = "正常終了";
         
