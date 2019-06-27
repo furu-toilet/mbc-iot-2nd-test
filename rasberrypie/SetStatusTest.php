@@ -4,11 +4,14 @@
 トイレ状態遷移ファイル
 URLからパラメータ-を与えて、ログインを行う。
 パラメーターの取得はURLからGETで行う。
-パラメーターはIDとhashのみとする（暫定）
-※今後、トイレ状態も付加出来たらいいな...
+パラメーターはIDとOpenSSLで暗号化されたパスワード、
+トイレ状態も付加して使用する。
 **下記URLのサンプル**
-https://mbc-iot-2nd.herokuapp.com/rasberrypie/SetStatusTest.php/?Terminal=testterminal&encpw=testhash&status=0
+https://test-mbc.herokuapp.com/rasberrypie/SetStatusTest.php/?Terminal=01&encpw=/I034gPQPtBQaxGVr7PqPQ==&status=1
 ?以降がパラメーターであり、項目は＆で区切る。
+Terminal...端末ID
+encpw......OpenSSLで暗号化されたパスワード
+status.....変更したい状態を入力（-1,0,1  →→　使用不可、空室、在室）
 */
 
 require_once "../php/Common.php";      //～～おまじない～～
