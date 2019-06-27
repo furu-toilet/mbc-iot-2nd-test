@@ -41,6 +41,7 @@ if($dbhash != null){
     var_dump( $dbhash[0]['hash']);
     if(password_verify($dec_pass,$dbhash[0]['hash'])){     //DBのhashをパラメーターから受け取ったパスワードでベリファイする。
         //照合してOKならログインFLGをTrueに変更
+        echo "flgTrue!!!";
         $flg = true;
     }
 }
