@@ -17,13 +17,13 @@ if(isset($_POST['sql'])){
         if($db->db_msg() == null){
             //$data = "OK";
             $result = array([0] => 400,[1]=>$db->db_msg());
-            echo json_encode( $result );
-            //echo $result;
+            //echo json_encode( $result );
+            echo $result;
         }else{
             $result = array([0]=> 100,[1]=>$db->db_msg());
             //$data = "ERR";
-            echo json_encode( $result );
-            //echo $result;
+            //echo json_encode( $result );
+            echo $result;
         }
     }else{
         //正常終了時
