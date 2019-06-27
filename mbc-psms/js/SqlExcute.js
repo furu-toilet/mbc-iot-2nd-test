@@ -11,7 +11,7 @@ $(function(){
         // Ajaxリクエストが成功した時発動
         .done( (data) => {
             //makeTable(JSON.parse(data),"log");
-            makeTable(data,"log");
+            makeTable(JSON.parse(data),"log");
         })
         // Ajaxリクエストが失敗した時発動
         .fail( (data) => {
@@ -32,7 +32,7 @@ function makeTable(data,tableId){
     var table = document.createElement("table");
     var cnt = 0;
     var sql = document.getElementById("sql").value;
-    if(JSON.parse(data[0]) == 100){
+    if(data[0] == 100){
         //ErrMsg(sql);                              //※※※変更箇所
         document.getElementById("msg").value = JSON.parse(data[1]);
     }else if(JSON.parse(data[0]) == 400){
