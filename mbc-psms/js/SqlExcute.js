@@ -11,7 +11,7 @@ $(function(){
         // Ajaxリクエストが成功した時発動
         .done( (data) => {
             //makeTable(JSON.parse(data),"log");
-            makeTable(data,"log");
+            makeTable(JSON.parse(data),"log");
         })
         // Ajaxリクエストが失敗した時発動
         .fail( (data) => {
