@@ -35,10 +35,12 @@ function makeTable(data,tableId){
     if(data[0] == 100){
         //ErrMsg(sql);                              //※※※変更箇所
         document.getElementById("msg").value = data[1];
+        console.log(100);
     }else if(data[0] == 400){
         document.getElementById("msg").value = "正常終了";
-        
+        console.log(200);
     }else{
+        consle.log("aaaa");
         //表に2次元配列の要素を格納
         //data = JSON.parse(data);
         for(let i in data){
