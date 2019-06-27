@@ -10,9 +10,8 @@ $(function(){
         })
         // Ajaxリクエストが成功した時発動
         .done( (data,str) => {
-            //makeTable(JSON.parse(data),"log");
-            console.log(str);
-            makeTable(data,"log");
+            makeTable(JSON.parse(data),"log");
+            //makeTable(data,"log");
         })
         // Ajaxリクエストが失敗した時発動
         .fail( (data) => {
@@ -27,19 +26,19 @@ $(function(){
 
 
 //表の動的作成
-function makeTable(arr,tableId){
+function makeTable(data,tableId){
     //表の作成開始
-    var data = JSON.parse(arr);
+    //var data = JSON.parse(arr);
     var rows  = [];
     var table = document.createElement("table");
     var cnt = 0;
     var sql = document.getElementById("sql").value;
     console.log(data[0]);
-    if(data[0] == 100){
+    if(data[res] == 100){
         //ErrMsg(sql);                              //※※※変更箇所
-        document.getElementById("msg").value = data[1];
+        document.getElementById("msg").value = data[data];
         console.log(100);
-    }else if(data[0] == 400){
+    }else if(data[res] == 400){
         document.getElementById("msg").value = "正常終了";
         console.log(200);
     }else{
