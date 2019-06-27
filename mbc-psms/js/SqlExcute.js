@@ -26,9 +26,9 @@ $(function(){
 
 
 //表の動的作成
-function makeTable(arr,tableId){
+function makeTable(data,tableId){
     //表の作成開始
-    var data = JSON.parse(arr);
+    //var data = JSON.parse(arr);
     var rows  = [];
     var table = document.createElement("table");
     var cnt = 0;
