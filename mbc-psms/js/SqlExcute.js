@@ -32,10 +32,10 @@ function makeTable(data,tableId){
     var table = document.createElement("table");
     var cnt = 0;
     var sql = document.getElementById("sql").value;
-    if(JSON.parse(data[0]) == "ERR"){
+    if(JSON.parse(data[0][0]) == "ERR"){
         //ErrMsg(sql);                              //※※※変更箇所
-        document.getElementById("msg").value = data[1];
-    }else if(JSON.parse(data[0]) == "OK"){
+        document.getElementById("msg").value = data[0][1];
+    }else if(JSON.parse(data[0][0]) == "OK"){
         document.getElementById("msg").value = "正常終了";
         
     }else{
