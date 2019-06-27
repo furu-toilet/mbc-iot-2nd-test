@@ -6,6 +6,8 @@
 require_once "./Common.php";
 $db = new Common();
 
+$msg = [];
+
 //header('Content-type: text/plain; charset= UTF-8');
 
 if(isset($_POST['sql'])){
@@ -14,10 +16,12 @@ if(isset($_POST['sql'])){
     
     if($data == null){
         if($db->db_msg() == null){
-            $data = "OK";
+            //$data = "OK";
+            $data = [["OK"],[$db->db_msg()]];
             echo json_encode( $data );
         }else{
-            $data = "ERR";
+            $data = [["ERR"],[$db->db_msg()]];
+            //$data = "ERR";
             echo json_encode( $data );
         }
     }else{
