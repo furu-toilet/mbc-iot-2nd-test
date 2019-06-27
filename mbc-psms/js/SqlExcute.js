@@ -34,11 +34,11 @@ function makeTable(data,tableId){
     var cnt = 0;
     var sql = document.getElementById("sql").value;
     console.log(data['res']);
-    if(data['res'] == 100){
+    if(data['res'] == "100"){
         //ErrMsg(sql);                              //※※※変更箇所
         document.getElementById("msg").value = data['data'];
         console.log(100);
-    }else if(data['res'] == 400){
+    }else if(data['res'] == "400"){
         document.getElementById("msg").value = "正常終了";
         console.log(200);
     }else{
