@@ -33,7 +33,6 @@ function makeTable(data,tableId){
     var table = document.createElement("table");
     var cnt = 0;
     var sql = document.getElementById("sql").value;
-    console.log(data['res']);
     if(data['res'] == "100"){
         //ErrMsg(sql);                              //※※※変更箇所
         document.getElementById("msg").value = data['data'];
