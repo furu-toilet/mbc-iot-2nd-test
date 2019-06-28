@@ -56,5 +56,69 @@ function db_sql($sql){
   function db_close(){
 	$pdo = null;
   }
+  
+  /* 下記新規メソッド作成中 */
+  /* SQL実行用メソッド */
+  function sql_excute($mltsql){
+  	
+  	
+  }
+  /* SQL分割用メソッド （未完）*/
+  function sql_split($mltsql){
+	$split_arr = array();
+	$start = 0;
+  	$vis = mb_strpos($mltsql, ';', $start, UTF-8);
+	array_push($split_arr,mb_substr($mltsql,$start,$vis));
+	$start = $start + $vis;
+  }
+  /* 単一SQL実行用メソッド（完了） */
+  function sql_once($sql){
+  	$once_result = $this->db_sql($sql);	//実行結果格納
+	$once_msg    = $this->db_msg();		//メッセージ格納
+	$once_arr    = array("sql" => $sql ,"data" => $once_result ,"msg" => $once_msg);//3次元連想配列作成
+	return $once_arr;	//戻り値を返す
+  }
+  
+  
+  
 }
+
+/*  追加機能実装予定 ↑↑↑↑↑↑新規メソッド作成。　2019/06/28　15:55
+複数のSQLに対応
+→" ; "を検出してSQL文を分割する。
+各SQL文を配列に格納後、foreachにてすべて実行。
+実行中にErrMsgを確認しながら、正常終了するまで実行する。
+結果データを返す。
+ex)
+実行済みSQL：正常終了
+実行済みSQL：正常終了
+エラー発生SQL：エラーメッセージ
+未実行SQL：未実行
+未実行SQL：未実行
+
+上記内容の２次元配列と、実行結果２次元連想配列を組み合わせた多次元連想配列にて戻り値として返す。
+
+実装効果：
+複数のテストデータを同時に挿入できる。
+上記の場合に、どこでエラーが起きたのか明確に分かるようにする。
+
+懸念課題1：同時にSELECT文を実行した際に、どの様に戻り値を表示するか（PSMS内）
+懸念課題2：他の連携ファイルとの干渉や、不具合について
+
+上記課題1解決案：SQLの開始部分にて"SELECT"を検出した場合に...（被採用）
+      すべての戻り値があるものについては表示をする。（PSMSにてforeach等ですべて検出後、表にて配備）（採用）
+上記課題2解決案：新規でメソッドを作成する。
+　　　　　　　　ｐｓｍｓに求められる機能の追加なので別途PSMSのみにて呼び出し方を変える。（SqlExcute.php、left.php等...）
+	
+作成予定メソッド：
+暫定メソッド数：3つ
+・実行用メソッド：sql_excute($mltsql)  戻り値：SQLすべての実行結果を4次元連想配列？で返す。
+	・SQLデータ分割用メソッド:sql_split($mltsql)　戻り値：SQLを格納した1次元配列
+	・単一SQL実行＆メッセージ取得用メソッド:sql_once($sql)　　戻り値：*SQLと*結果データと*エラーメッセージを格納した3次元連想配列
+
+
+*/
+
+
+
 ?>
