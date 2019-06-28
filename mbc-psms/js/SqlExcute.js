@@ -59,7 +59,7 @@ function makeTable(data,tableId){
             }
             for(let j in data['data'][i]){
                 cell=rows[cnt].insertCell(-1);
-                cell.appendChild(document.createTextNode(data[i][j]));
+                cell.appendChild(document.createTextNode(data['data'][i][j]));
                 // 背景色の設定
                 cell.style.backgroundColor = "#878fed"; // ヘッダ行以外
             }
