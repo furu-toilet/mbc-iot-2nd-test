@@ -25,7 +25,9 @@ if(isset($_POST['sql'])){
         }
     }else{
         //正常終了時
-        echo json_encode( $data );
+        //echo json_encode( $data );
+        $result = array("res" => "700","data" =>$data);
+        echo json_encode( $result );
     }
     //echo json_encode( $data );
 }else{
