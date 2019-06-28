@@ -65,29 +65,3 @@ function makeTable(data,tableId){
         document.getElementById(tableId).appendChild(table);
     }
 }
-
-/*  以下のメソッドは使用しない  */
-//エラーメッセージの取得
-/*
-function ErrMsg(sql){
-    $.ajax({
-        url:'./php/ErrMsg.php',
-        type:'POST',
-        data:{
-            'sql':$('#sql').val()
-        }
-    })
-    // Ajaxリクエストが成功した時発動
-    .done( (data) => {
-        document.getElementById("msg").value = JSON.parse(data); data;
-    })
-    // Ajaxリクエストが失敗した時発動
-    .fail( (data) => {
-        //$('.sql-result').val(data);
-    })
-    // Ajaxリクエストが成功・失敗どちらでも発動
-    .always( (data) => {
-
-    });
-}
-*/
