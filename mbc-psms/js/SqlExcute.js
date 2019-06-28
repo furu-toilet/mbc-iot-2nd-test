@@ -43,6 +43,7 @@ function makeTable(data,tableId){
         console.log(200);
     }else{
         console.log("aaaa");
+        document.getElementById("msg").value = "正常終了";
         //表に2次元配列の要素を格納
         //data = JSON.parse(data);
         for(let i in data){
