@@ -45,10 +45,10 @@ function makeTable(data,tableId){
         console.log("aaaa");
         //表に2次元配列の要素を格納
         //data = JSON.parse(data);
-        for(let i in data){
+        for(let i in data['data']){
             rows.push(table.insertRow(-1));  // 行の追加
             if(i == 0){
-               for(let x in data[i]){
+               for(let x in data['data'][i]){
                    cell = rows[cnt].insertCell(-1);
                    cell.appendChild(document.createTextNode(x));
                    cell.style.backgroundColor = "#1727ea"; // ヘッダ行
@@ -56,7 +56,7 @@ function makeTable(data,tableId){
                }
                cnt++;
             }
-            for(let j in data[i]){
+            for(let j in data['data'][i]){
                 cell=rows[cnt].insertCell(-1);
                 cell.appendChild(document.createTextNode(data[i][j]));
                 // 背景色の設定
