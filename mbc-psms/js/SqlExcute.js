@@ -37,12 +37,9 @@ function makeTable(data,tableId){
     if(data['res'] == "100"){
         //ErrMsg(sql);                              //※※※変更箇所
         document.getElementById("msg").value = data['data'];
-        console.log(100);
     }else if(data['res'] == "400"){
         document.getElementById("msg").value = "正常終了";
-        console.log(200);
     }else{
-        console.log("aaaa");
         document.getElementById("msg").value = "正常終了";
         //表に2次元配列の要素を格納
         //data = JSON.parse(data);
@@ -70,8 +67,9 @@ function makeTable(data,tableId){
     }
 }
 
-
+/*  以下のメソッドは使用しない  */
 //エラーメッセージの取得
+/*
 function ErrMsg(sql){
     $.ajax({
         url:'./php/ErrMsg.php',
@@ -82,7 +80,7 @@ function ErrMsg(sql){
     })
     // Ajaxリクエストが成功した時発動
     .done( (data) => {
-        document.getElementById("msg").value = /*JSON.parse(data);*/ data;
+        document.getElementById("msg").value = JSON.parse(data); data;
     })
     // Ajaxリクエストが失敗した時発動
     .fail( (data) => {
@@ -93,3 +91,4 @@ function ErrMsg(sql){
 
     });
 }
+*/
