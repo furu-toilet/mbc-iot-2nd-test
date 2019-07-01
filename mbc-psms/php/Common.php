@@ -60,16 +60,26 @@ function db_sql($sql){
   /* 下記新規メソッド作成中 */
   /* SQL実行用メソッド */
   function sql_excute($mltsql){
-  	
-  	
+	$ex_result = array();
+  	foreach(sql_split($mltsql) as $ex_sql){
+		array_push($ex_result,sql_once($ex_sql));
+	}
+  	return $ex_result;
   }
-  /* SQL分割用メソッド （未完）*/
+  /* SQL分割用メソッド(文字列) （未完）*/
   function sql_split($mltsql){
 	$split_arr = array();
+	$leng = $mltsql.length();
 	$start = 0;
-  	$vis = mb_strpos($mltsql, ';', $start, UTF-8);
-	array_push($split_arr,mb_substr($mltsql,$start,$vis));
-	$start = $start + $vis;
+	while(true){
+	    $vis = mb_strpos($mltsql, ';', $start, UTF-8);
+	    array_push($split_arr,mb_substr($mltsql,$start,$vis));
+	    $start = $vis + 1;
+	    $mltsql = bm_substr($mltsql,$start,$leng);
+	    if($mltsql < 2){
+	    	break;
+	    }
+	}
   }
   /* 単一SQL実行用メソッド（完了） */
   function sql_once($sql){
