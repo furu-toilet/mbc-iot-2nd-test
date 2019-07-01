@@ -69,9 +69,9 @@ function db_sql($sql){
   /* SQL分割用メソッド(文字列) （未完）*/
   function sql_split($mltsql){
 	$split_arr = array();
-	$leng = $mltsql.length();
 	$start = 0;
 	while(true){
+	    $leng = $mltsql.length();
 	    $vis = mb_strpos($mltsql, ';', $start, UTF-8);
 	    array_push($split_arr,mb_substr($mltsql,$start,$vis));
 	    $start = $vis + 1;
