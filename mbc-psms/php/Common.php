@@ -75,11 +75,12 @@ function db_sql($sql){
 	    $vis = mb_strpos($mltsql, ';', $start, UTF-8);
 	    array_push($split_arr,mb_substr($mltsql,$start,$vis));
 	    $start = $vis + 1;
-	    $mltsql = bm_substr($mltsql,$start,$leng);
+	    $mltsql = mb_substr($mltsql,$start,$leng);
 	    if($mltsql < 2){
 	    	break;
 	    }
 	}
+	return $split_arr;
   }
   /* 単一SQL実行用メソッド（完了） */
   function sql_once($sql){
