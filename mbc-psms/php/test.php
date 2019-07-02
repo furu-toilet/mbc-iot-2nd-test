@@ -4,7 +4,8 @@ $db = new Common();
 
 $sql = "select * from user_info;";
 
-var_dump($db->sql_excute($sql));
+//var_dump($db->sql_excute($sql));
+echo "test";
 
 
 ?>
