@@ -44,7 +44,7 @@ function db_sql($sql){
         
         return $all;                                                //戻り値2次元連想配列
     }catch (PDOException $e){
-        $this->errmsg = '実行SQL:' . $sql. '\\n' . 'SQL実行エラー:' . $e->getMessage();         //エラーメッセージの格納
+        $this->errmsg = '実行SQL:' . $sql. '\n' . 'SQL実行エラー:' . $e->getMessage();         //エラーメッセージの格納
     }
 }
     /*  エラーメッセージ取得  */
