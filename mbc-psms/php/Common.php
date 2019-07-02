@@ -60,10 +60,11 @@ function db_sql($sql){
   /* 下記新規メソッド作成中 */
   /* SQL実行用メソッド */
   function sql_excute($mltsql){
-	$ex_result = array();
+	$ex_result = array();/*
   	foreach(sql_split($mltsql) as $ex_sql){
 		array_push($ex_result,sql_once($ex_sql));
-	}
+	}*/
+	$ex_result = ["sql" => "123", "data" => "456"];
   	return $ex_result;
   }
   /* SQL分割用メソッド(文字列) （未完）*/
