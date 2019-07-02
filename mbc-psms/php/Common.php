@@ -78,7 +78,7 @@ function db_sql($sql){
 	    array_push($split_arr,mb_substr($mltsql,$start,$vis));
 	    $start = $vis + 1;
 	    $mltsql = mb_substr($mltsql,$start,$leng);
-	    if($mltsql < 2){
+	    if($mltsql < 2 || mb_strpos($mltsql, ';', $start, UTF-8) == false){
 	    	break;
 	    }
 	}
