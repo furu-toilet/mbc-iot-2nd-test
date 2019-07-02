@@ -65,8 +65,9 @@ function db_sql($sql){
 		array_push($ex_result,sql_once($ex_sql));
 	}*/
 	//$ex_result = ["sql" => "123", "data" => "456"];
-	sql_split("select * from user_info;");
-  	return $ex_result;
+	//sql_split("select * from user_info;");
+	
+  	return sql_once("select * from user_info;");
   }
   /* SQL分割用メソッド(文字列) （未完）*/
   function sql_split($mltsql){
