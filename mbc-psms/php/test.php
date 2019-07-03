@@ -8,7 +8,7 @@ $sql = "select * from user_info;";
 
 function sql_split($mltsql){
 	//$split_arr = array();
-	$start = 0;
+	//$start = 0;
 	//while(true){
 	    //$leng = mb_strlen($mltsql);
 	    $vis = mb_strpos($mltsql, ";");
