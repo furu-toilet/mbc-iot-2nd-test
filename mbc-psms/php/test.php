@@ -5,7 +5,7 @@ $db = new Common();
 
 $sql = "select * from user_info;";
 */
-
+/*
 function sql_split($mltsql){
 	//$split_arr = array();
 	$start = 0;
@@ -21,7 +21,7 @@ function sql_split($mltsql){
 	}
 	//return $split_arr;
 }
-
+*/
 $datalist = 
   '
   select * from user_info;
