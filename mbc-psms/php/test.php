@@ -7,19 +7,19 @@ $sql = "select * from user_info;";
 */
 
 function sql_split($mltsql){
-	$split_arr = array();
+	//$split_arr = array();
 	$start = 0;
 	while(true){
 	    $leng = mb_strlen($mltsql);
 	    $vis = mb_strpos($mltsql, ';', $start, UTF-8);
-	    array_push($split_arr,mb_substr($mltsql,$start,$vis));
+	    //array_push($split_arr,mb_substr($mltsql,$start,$vis));
 	    $start = $vis + 1;
 	    $mltsql = mb_substr($mltsql,$start,$leng);
 	    if($mltsql < 2 || mb_strpos($mltsql, ';', $start, UTF-8) == false){
 	    	break;
 	    }
 	}
-	return $split_arr;
+	//return $split_arr;
 }
 
 $datalist = 
