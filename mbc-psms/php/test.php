@@ -11,9 +11,9 @@ function sql_split($mltsql){
 	$start = 0;
 	//while(true){
 	    //$leng = mb_strlen($mltsql);
-	    $vis = mb_strpos($mltsql, ';', $start, UTF-8);
+	    $vis = mb_strpos($mltsql, ';');
 	    //array_push($split_arr,mb_substr($mltsql,$start,$vis));
-	    $start = $vis + 1;
+	    //$start = $vis + 1;
 	    //$mltsql = mb_substr($mltsql,$start,$leng);
 	    //if($mltsql < 2 || mb_strpos($mltsql, ';', $start, UTF-8) == false){
 	    //	break;
