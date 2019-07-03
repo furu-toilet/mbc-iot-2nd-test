@@ -30,7 +30,7 @@ $datalist =
   select * from abctable;
   ';
 
-$result = sql_split($datalist);
+sql_split($datalist);
 
 
 ?>
