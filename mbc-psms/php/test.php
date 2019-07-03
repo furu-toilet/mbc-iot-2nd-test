@@ -5,23 +5,23 @@ $db = new Common();
 
 $sql = "select * from user_info;";
 */
-/*
+
 function sql_split($mltsql){
 	//$split_arr = array();
 	$start = 0;
-	while(true){
-	    $leng = mb_strlen($mltsql);
+	//while(true){
+	    //$leng = mb_strlen($mltsql);
 	    $vis = mb_strpos($mltsql, ';', $start, UTF-8);
 	    //array_push($split_arr,mb_substr($mltsql,$start,$vis));
 	    $start = $vis + 1;
-	    $mltsql = mb_substr($mltsql,$start,$leng);
-	    if($mltsql < 2 || mb_strpos($mltsql, ';', $start, UTF-8) == false){
-	    	break;
-	    }
-	}
+	    //$mltsql = mb_substr($mltsql,$start,$leng);
+	    //if($mltsql < 2 || mb_strpos($mltsql, ';', $start, UTF-8) == false){
+	    //	break;
+	    //}
+	//}
 	//return $split_arr;
 }
-*/
+
 $datalist = 
   '
   select * from user_info;
@@ -30,7 +30,7 @@ $datalist =
   select * from abctable;
   ';
 
-//$result = sql_split($datalist);
+$result = sql_split($datalist);
 
 
 ?>
