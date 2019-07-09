@@ -1,11 +1,11 @@
 <?php
 Class Common {
     /* 全てprivateで定義（関数からのみ取得してください。） */
-  private $pdo = null;          //DatabaseObject
-  private $stmt = null;         //PDOStatmant
-  private $sql = null;          //SQL
+  private $pdo    = null;          //DatabaseObject
+  private $stmt   = null;         //PDOStatmant
+  private $sql    = null;          //SQL
   private $errmsg = null;       //エラーメッセージ
-  private $flg = false;          //環境設定FLG true or false
+  private $flg    = false;          //環境設定FLG true or false
   function Common(){
     /* $flg=trueならローカルMySQlで接続 */
     /* $flg=falseならリモートPostgreSQLで接続 */
@@ -13,8 +13,8 @@ Class Common {
     if($this->flg == true){           //ローカルならtrue
         /* ローカルMySQL接続 */
         try{
-            $dsn = 'mysql:dbname=toilet;host=localhost;charset=utf8mb4';    //utf-8にて実行
-            $user = 'furu';                         //自分のIDを入力してください。
+            $dsn      = 'mysql:dbname=toilet;host=localhost;charset=utf8mb4';    //utf-8にて実行
+            $user     = 'furu';                         //自分のIDを入力してください。
             $password = 'cz4a?5456';                //自分のPasswordを入力してください。
             
             $this->pdo = new PDO($dsn, $user, $password);
