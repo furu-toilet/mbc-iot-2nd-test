@@ -58,7 +58,6 @@ select * from abctable;
     //$sql = $_POST['sql'];
     $sql = $datalist;
     $data = $db->sql_excute($sql);
-    /*
     foreach($data as $once){
         if($once['data'] == null){            
             if($once['msg'] == null){
@@ -72,9 +71,8 @@ select * from abctable;
         array_push($result,$once);
     }        
     echo json_encode( $result );
-}else{
-    echo 'FAIL TO AJAX REQUEST';
-    */
+//}else{
+//    echo 'FAIL TO AJAX REQUEST';
 //}
 
 
