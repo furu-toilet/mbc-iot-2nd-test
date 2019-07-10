@@ -10,12 +10,11 @@ function sql_split($mltsql){
 	$split_arr = array();
 	$start = 0;
 	while(true){
-	    $leng = strlen($mltsql);
-	    $vis = strpos($mltsql, ";");
+	    $vis = strpos($mltsql, ";", $start);
 	    array_push($split_arr,substr($mltsql,$start,$vis));
 	    $start = $vis + 1;
-	    $mltsql = substr($mltsql,$start,$leng);
-	    if($mltsql < 2 || strpos($mltsql, ';', $start, UTF-8) == false){
+	    $mltsql = substr($mltsql,$start,$vis);
+	    if(strpos($mltsql, ';', $start) == false){
 	    	break;
 	    }
 	}
