@@ -44,9 +44,19 @@ if(isset($_POST['sql'])){
 }
 */
 
-if(isset($_POST['sql'])){
+$datalist = 
+'
+select * from user_info;
+select * from "RuiInfo";
+select * from "ToiletTerminal";
+select * from abctable;
+';
+
+//if(isset($_POST['sql'])){
+if(isset($datalist){
     $result = array();
     $sql = $_POST['sql'];
+    $sql = $datalist;
     $data = $db->sql_excute($sql);
     foreach($data as $once){
         if($once['data'] == null){            
