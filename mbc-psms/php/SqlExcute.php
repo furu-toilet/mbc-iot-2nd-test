@@ -17,7 +17,7 @@ $db = new Common();
 //  
 
 //header('Content-type: text/plain; charset= UTF-8');
-
+/*
 if(isset($_POST['sql'])){
     $sql = $_POST['sql'];
     $data = $db->db_sql($sql);
@@ -41,6 +41,13 @@ if(isset($_POST['sql'])){
     //echo json_encode( $data );
 }else{
     echo 'FAIL TO AJAX REQUEST';
+}
+*/
+
+if(isset($_POST['sql'])){
+    $sql = $_POST['sql'];
+    $data = $db->sql_excute($sql);
+    echo json_encode( $data );
 }
 
 ?>
