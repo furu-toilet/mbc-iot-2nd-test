@@ -11,7 +11,7 @@ function sql_split($mltsql){
 	//$start = 0;
 	//while(true){
 	    //$leng = mb_strlen($mltsql);
-	    $vis = mb_strpos($mltsql, ";");
+	    //$vis = mb_strpos($mltsql, ";");
 	    //array_push($split_arr,mb_substr($mltsql,$start,$vis));
 	    //$start = $vis + 1;
 	    //$mltsql = mb_substr($mltsql,$start,$leng);
@@ -30,7 +30,9 @@ $datalist =
   select * from abctable;
   ';
 
-sql_split($datalist);
+//sql_split($datalist);
+
+var_dump( mb_strpos($datalist, ";") );
 
 
 ?>
