@@ -14,7 +14,7 @@ $db = new Common();
 //  
 //  
 //header('Content-type: text/plain; charset= UTF-8');
-/*
+
 if(isset($_POST['sql'])){
     $sql = $_POST['sql'];
     $data = $db->db_sql($sql);
@@ -39,34 +39,5 @@ if(isset($_POST['sql'])){
 }else{
     echo 'FAIL TO AJAX REQUEST';
 }
-*/
-$datalist = 
-'
-select * from user_info;
-select * from "RuiInfo";
-select * from "ToiletTerminal";
-select * from abctable;
-';
-//if(isset($_POST['sql'])){
-if(isset($datalist){
-    $result = array();
-    $sql = $_POST['sql'];
-    $sql = $datalist;
-    $data = $db->sql_excute($sql);
-    foreach($data as $once){
-        if($once['data'] == null){            
-            if($once['msg'] == null){
-                array_push($once,"res" => "400");
-            }else{
-                array_push($once,"res" => "100");
-            }
-        }else{
-            array_push($once,"res" => "700");
-        }
-        array_push($result,$once);
-    }        
-    echo json_encode( $result );
-}else{
-    echo 'FAIL TO AJAX REQUEST';
-}
+
 ?>
