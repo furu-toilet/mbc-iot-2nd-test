@@ -62,7 +62,8 @@ function db_sql($sql){
   function sql_excute($mltsql){
 	$ex_result = array();
   	foreach(sql_split($mltsql) as $ex_sql){
-		array_push($ex_result,sql_once($ex_sql));
+		//array_push($ex_result,sql_once($ex_sql));
+		array_push($ex_result,$ex_sql);
 	}
 	/*
 	$ex_result = ["sql" => "123", "data" => "456"];
