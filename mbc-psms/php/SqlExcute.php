@@ -53,7 +53,7 @@ select * from abctable;
 ';
 
 //if(isset($_POST['sql'])){
-if(isset($datalist){
+//if(isset($datalist){
     $result = array();
     //$sql = $_POST['sql'];
     $sql = $datalist;
@@ -75,7 +75,7 @@ if(isset($datalist){
 }else{
     echo 'FAIL TO AJAX REQUEST';
     */
-}
+//}
 
 
 ?>
