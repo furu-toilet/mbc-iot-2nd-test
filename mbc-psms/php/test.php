@@ -13,8 +13,8 @@ $datalist =
 
 $data2 = "select * from user_info";
 
-//var_dump( $db->sql_excute($datalist) );
+var_dump( $db->sql_excute($datalist) );
 
-var_dump( $db->sql_once($data2) );
+//var_dump( $db->sql_once($data2) );
 
 ?>
