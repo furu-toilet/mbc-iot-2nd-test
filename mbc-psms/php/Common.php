@@ -63,15 +63,9 @@ function db_sql($sql){
 	$ex_result = array();
 	$sql_list = $this->sql_split($mltsql);
   	foreach($sql_list as $ex_sql){
-		//array_push($ex_result,$this->sql_once($ex_sql));
-		array_push($ex_result,$ex_sql);
+		array_push($ex_result,$this->sql_once($ex_sql));
 	}
 	/*
-	$ex_result = ["sql" => "123", "data" => "456"];
-	sql_split("select * from user_info;");
-	
-  	return sql_once("select * from user_info;");
-	*/
 	return $ex_result;
   }
   /* SQL分割用メソッド(文字列) （完了）*/	//マルチバイトは未対応！！　composer.jsonを要編集！！
