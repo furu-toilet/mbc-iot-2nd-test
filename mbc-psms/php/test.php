@@ -10,9 +10,9 @@ function sql_split($mltsql){
 	$split_arr = array();
 	$start = 0;
 	while(true){
-	    $vis = strpos($mltsql, ";", $start);
-	    array_push($split_arr,substr($mltsql,$start,$vis + 1));
-	    $start = $vis + 1;
+	    $vis = strpos($mltsql, ";", $start) + 1;
+	    array_push($split_arr,substr($mltsql,$start,$vis));
+	    $start = $vis;
 	    if(strpos($mltsql, ";", $start) == false){
 	    	break;
 	    }
