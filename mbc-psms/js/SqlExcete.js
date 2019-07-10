@@ -33,35 +33,38 @@ function makeTable(data,tableId){
     var table = document.createElement("table");
     var cnt = 0;
     var sql = document.getElementById("sql").value;
-    if(data['res'] == "100"){
-        //ErrMsg(sql);                              //※※※変更箇所
-        document.getElementById("msg").value = data['data'];
-    }else if(data['res'] == "400"){
-        document.getElementById("msg").value = "正常終了";
-    }else{
-        document.getElementById("msg").value = "正常終了";
-        //表に2次元配列の要素を格納
-        //data = JSON.parse(data);
-        for(let i in data['data']){
-            rows.push(table.insertRow(-1));  // 行の追加
-            if(i == 0){
-               for(let x in data['data'][i]){
-                   cell = rows[cnt].insertCell(-1);
-                   cell.appendChild(document.createTextNode(x));
-                   cell.style.backgroundColor = "#1727ea"; // ヘッダ行
-                   rows.push(table.insertRow(-1));
-               }
-               cnt++;
+    
+    for(var q = 0; q < data.length;q++){
+        if(data[q]['res'] == "100"){
+            //ErrMsg(sql);                              //※※※変更箇所
+            document.getElementById("msg").value = data[q]['data'];
+        }else if(data[q]['res'] == "400"){
+            document.getElementById("msg").value = "正常終了";
+        }else{
+            document.getElementById("msg").value = "正常終了";
+            //表に2次元配列の要素を格納
+            //data = JSON.parse(data);
+            for(let i in data[q]['data']){
+                rows.push(table.insertRow(-1));  // 行の追加
+                if(i == 0){
+                   for(let x in data[q]['data'][i]){
+                       cell = rows[cnt].insertCell(-1);
+                       cell.appendChild(document.createTextNode(x));
+                       cell.style.backgroundColor = "#1727ea"; // ヘッダ行
+                       rows.push(table.insertRow(-1));
+                   }
+                   cnt++;
+                }
+                for(let j in data[q]['data'][i]){
+                    cell=rows[cnt].insertCell(-1);
+                    cell.appendChild(document.createTextNode(data[q]['data'][i][j]));
+                    // 背景色の設定
+                    cell.style.backgroundColor = "#878fed"; // ヘッダ行以外
+                }
+                cnt++;
             }
-            for(let j in data['data'][i]){
-                cell=rows[cnt].insertCell(-1);
-                cell.appendChild(document.createTextNode(data['data'][i][j]));
-                // 背景色の設定
-                cell.style.backgroundColor = "#878fed"; // ヘッダ行以外
-            }
-            cnt++;
+            //指定したdiv要素に表を加える
+            document.getElementById(tableId).appendChild(table);
         }
-        //指定したdiv要素に表を加える
-        document.getElementById(tableId).appendChild(table);
     }
 }
