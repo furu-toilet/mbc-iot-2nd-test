@@ -61,7 +61,8 @@ function db_sql($sql){
   /* SQL実行用メソッド */
   function sql_excute($mltsql){
 	$ex_result = array();
-  	foreach(sql_split($mltsql) as $ex_sql){
+	$sql_list = sql_split($mltsql);
+  	foreach($sql_list as $ex_sql){
 		//array_push($ex_result,sql_once($ex_sql));
 		array_push($ex_result,$ex_sql);
 	}
