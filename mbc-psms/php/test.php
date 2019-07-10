@@ -35,7 +35,7 @@ $data2 = "a;b;c;d;e;f;g;";
 //var_dump( sql_split($data2) );
 
 $vis = strpos($mltsql, ";", $start) + 1;
-var_dump(substr($data2,6,$vis));
+var_dump(substr($data2,6,6));
 
 
 ?>
