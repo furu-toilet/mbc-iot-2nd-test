@@ -62,7 +62,7 @@ if(isset($_POST['sql'])){
     }        
     echo json_encode( $result );
 }else{
-    echo array('FAIL TO AJAX REQUEST');
+    echo 'FAIL TO AJAX REQUEST';
 }
 
 
