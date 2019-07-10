@@ -44,19 +44,10 @@ if(isset($_POST['sql'])){
 }
 */
 
-$datalist = 
-'
-select * from user_info;
-select * from "RuiInfo";
-select * from "ToiletTerminal";
-select * from abctable;
-';
 
-//if(isset($_POST['sql'])){
-//if(isset($datalist){
+if(isset($_POST['sql'])){
     $result = array();
-    //$sql = $_POST['sql'];
-    $sql = $datalist;
+    $sql = $_POST['sql'];
     $data = $db->sql_excute($sql);
     foreach($data as $once){
         if($once['data'] == null){            
@@ -71,9 +62,9 @@ select * from abctable;
         array_push($result,$once);
     }        
     echo json_encode( $result );
-//}else{
-//    echo 'FAIL TO AJAX REQUEST';
-//}
+}else{
+    echo 'FAIL TO AJAX REQUEST';
+}
 
 
 ?>
