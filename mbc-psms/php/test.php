@@ -11,7 +11,10 @@ $datalist =
   select * from abctable;
   ';
 
-var_dump( $db->sql_excute($datalist) );
+$data2 = "select * from user_info";
 
+//var_dump( $db->sql_excute($datalist) );
+
+var_dump( $db->sql_once($data2) );
 
 ?>
