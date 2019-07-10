@@ -33,7 +33,12 @@ $datalist =
 //sql_split($datalist);
 
 //$str = ";";
-var_dump( mb_strpos($datalist, "s") );
+//var_dump( mb_strpos($datalist, "s") );
+
+$haystack = "abcdefgd";
+var_dump(strpos($haystack, "d"));
+var_dump(strpos($haystack, "x"));
+
 
 
 ?>
