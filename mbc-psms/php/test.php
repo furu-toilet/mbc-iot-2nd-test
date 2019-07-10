@@ -32,8 +32,8 @@ $datalist =
 
 //sql_split($datalist);
 
-$str = ";";
-var_dump( mb_strpos($datalist, $str) );
+//$str = ";";
+var_dump( mb_strpos($datalist, "s") );
 
 
 ?>
