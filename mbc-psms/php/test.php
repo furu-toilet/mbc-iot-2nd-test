@@ -35,9 +35,11 @@ $datalist =
 //$str = ";";
 //var_dump( mb_strpos($datalist, "s") );
 
-$haystack = "abcdefgd";
-var_dump(strpos($haystack, "d"));
-var_dump(strpos($haystack, "x"));
+$haystack = "日本語の文字列を検索。日本語検索。";
+var_dump(mb_strpos($haystack, "文"));
+var_dump(mb_strpos($haystack, "検"));
+var_dump(mb_strpos($haystack, "国"));
+
 
 
 
