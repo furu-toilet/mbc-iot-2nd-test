@@ -58,6 +58,7 @@ if(isset($datalist){
     $sql = $_POST['sql'];
     $sql = $datalist;
     $data = $db->sql_excute($sql);
+    /*
     foreach($data as $once){
         if($once['data'] == null){            
             if($once['msg'] == null){
@@ -73,6 +74,7 @@ if(isset($datalist){
     echo json_encode( $result );
 }else{
     echo 'FAIL TO AJAX REQUEST';
+    */
 }
 
 
