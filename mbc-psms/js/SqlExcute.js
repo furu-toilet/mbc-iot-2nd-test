@@ -9,7 +9,7 @@ $(function(){
             }
         })
         // Ajaxリクエストが成功した時発動
-        .done( (data,str) => {
+        .done( (data) => {
             makeTable(JSON.parse(data),"log");
             //makeTable(data,"log");
         })
