@@ -66,7 +66,7 @@ function db_sql($sql){
 		$ex_once = $this->sql_once($ex_sql);
 		array_push($ex_result,$ex_once);
 	}
-	/*
+	
 	return $ex_result;
   }
   /* SQL分割用メソッド(文字列) （完了）*/	//マルチバイトは未対応！！　composer.jsonを要編集！！
