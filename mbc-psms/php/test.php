@@ -13,7 +13,9 @@ $datalist =
 
 $data2 = "select * from user_info";
 
-var_dump( $db->sql_excute($datalist) );
+//var_dump( $db->sql_excute($datalist) );
+
+var_dump( $db->sql_split($datalist) );
 
 //var_dump( $db->sql_once($data2) );
 
