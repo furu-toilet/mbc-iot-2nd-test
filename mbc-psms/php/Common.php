@@ -63,7 +63,8 @@ function db_sql($sql){
 	$ex_result = array();
 	$sql_list = $this->sql_split($mltsql);
   	foreach($sql_list as $ex_sql){
-		array_push($ex_result,$this->sql_once($ex_sql));
+		$ex_once = $this->sql_once($ex_sql);
+		array_push($ex_result,$ex_once);
 	}
 	/*
 	return $ex_result;
