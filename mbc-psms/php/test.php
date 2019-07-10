@@ -11,7 +11,7 @@ function sql_split($mltsql){
 	$start = 0;
 	while(true){
 	    $vis = strpos($mltsql, ";", $start) + 1;
-	    array_push($split_arr,substr($mltsql,$start,$vis));
+	    array_push($split_arr,substr($mltsql,$start,$vis - $start));
 	    $start = $vis;
 	    if(strpos($mltsql, ";", $start) == false){
 	    	break;
@@ -34,8 +34,8 @@ $data2 = "a;b;c;d;e;f;g;";
 
 //var_dump( sql_split($data2) );
 
-$vis = strpos($mltsql, ";", 6) + 1;
-var_dump(substr($data2,6,$vis));
+//$vis = $start - strpos($mltsql, ";", 6) + 1;
+//var_dump(substr($data2,6,$vis));
 
 
 ?>
