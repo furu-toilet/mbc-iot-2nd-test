@@ -45,9 +45,25 @@ if(isset($_POST['sql'])){
 */
 
 if(isset($_POST['sql'])){
+    $result = array();
     $sql = $_POST['sql'];
     $data = $db->sql_excute($sql);
-    echo json_encode( $data );
+    foreach($data as $once){
+        if($once['data'] == null){            
+            if($once['msg'] == null){
+                array_push($once,"res" => "400");
+            }else{
+                array_push($once,"res" => "100");
+            }
+        }else{
+            array_push($once,"res" => "700");
+        }
+        array_push($result,$once);
+    }        
+    echo json_encode( $result );
+}else{
+    echo array('FAIL TO AJAX REQUEST');
 }
+
 
 ?>
