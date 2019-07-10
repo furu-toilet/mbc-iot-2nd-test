@@ -28,9 +28,11 @@ $datalist =
   select * from abctable;
   ';
 
-var_dump( sql_split($datalist) );
+//var_dump( sql_split($datalist) );
 
+$data2 = "a;b;c;d;e;f;g;";
 
+var_dump( sql_split($data2) );
 
 
 
