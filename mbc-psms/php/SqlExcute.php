@@ -61,14 +61,14 @@ select * from abctable;
     foreach($data as $once){
         if($once['data'] == null){            
             if($once['msg'] == null){
-                //array_push($once,"res" => "400");
+                array_push($once,array("res" => "400"));
             }else{
-                //array_push($once,"res" => "100");
+                array_push($once,array("res" => "100"));
             }
         }else{
-            //array_push($once,"res" => "700");
+            array_push($once,array("res" => "700"));
         }
-        //array_push($result,$once);
+        array_push($result,$once);
     }        
     echo json_encode( $result );
 //}else{
