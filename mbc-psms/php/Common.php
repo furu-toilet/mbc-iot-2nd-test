@@ -60,30 +60,31 @@ function db_sql($sql){
   /* 下記新規メソッド作成中 */
   /* SQL実行用メソッド */
   function sql_excute($mltsql){
-	$ex_result = array();/*
+	$ex_result = array();
   	foreach(sql_split($mltsql) as $ex_sql){
 		array_push($ex_result,sql_once($ex_sql));
-	}*/
-	//$ex_result = ["sql" => "123", "data" => "456"];
-	//sql_split("select * from user_info;");
+	}
+	/*
+	$ex_result = ["sql" => "123", "data" => "456"];
+	sql_split("select * from user_info;");
 	
   	return sql_once("select * from user_info;");
+	*/
+	return $ex_result;
   }
-  /* SQL分割用メソッド(文字列) （未完）*/
+  /* SQL分割用メソッド(文字列) （完了）*/
   function sql_split($mltsql){
-	$split_arr = array();
-	$start = 0;
-	while(true){
-	    $leng = $mltsql.length();
-	    $vis = mb_strpos($mltsql, ';', $start, UTF-8);
-	    array_push($split_arr,mb_substr($mltsql,$start,$vis));
-	    $start = $vis + 1;
-	    $mltsql = mb_substr($mltsql,$start,$leng);
-	    if($mltsql < 2 || mb_strpos($mltsql, ';', $start, UTF-8) == false){
-	    	break;
-	    }
-	}
-	return $split_arr;
+  	$split_arr = array();
+  	$start = 0;
+  	while(true){
+  	    $vis = strpos($mltsql, ";", $start) + 1;
+  	    array_push($split_arr,substr($mltsql,$start,$vis - $start));
+  	    $start = $vis;
+  	    if(strpos($mltsql, ";", $start) == false){
+  		break;
+  	    }
+  	}
+  	return $split_arr;
   }
   /* 単一SQL実行用メソッド（完了） */
   function sql_once($sql){
