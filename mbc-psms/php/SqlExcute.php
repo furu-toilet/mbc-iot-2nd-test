@@ -55,7 +55,7 @@ select * from abctable;
 //if(isset($_POST['sql'])){
 if(isset($datalist){
     $result = array();
-    $sql = $_POST['sql'];
+    //$sql = $_POST['sql'];
     $sql = $datalist;
     $data = $db->sql_excute($sql);
     /*
