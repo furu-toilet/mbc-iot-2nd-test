@@ -73,9 +73,6 @@ function db_sql($sql){
   private function sql_split($mltsql){
   	$split_arr = array();
   	$start = 0;
-	if(substr($mltsql,strlen($mltsql)-1) == ";"){
-		$mltsql = $mltsql + ";";
-	}
   	while(true){
   	    $vis = strpos($mltsql, ";", $start) + 1;
   	    array_push($split_arr,substr($mltsql,$start,$vis - $start));
