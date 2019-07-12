@@ -52,12 +52,12 @@ if(isset($_POST['sql'])){
     foreach($data as $once){
         if($once['data'] == null){            
             if($once['msg'] == null){
-                array_push($once,array("res" => 400));
+                array_push($once,array("res" => "400"));
             }else{
-                array_push($once,array("res" => 100));
+                array_push($once,array("res" => "100"));
             }
         }else{
-            array_push($once,array("res" => 700));
+            array_push($once,array("res" => "700"));
         }
         array_push($result,$once);
     }        
