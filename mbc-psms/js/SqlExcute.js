@@ -38,11 +38,11 @@ function makeTable(data,tableId){
         if(data[q]['res'] == "100"){
             //ErrMsg(sql);                              //※※※変更箇所
             //document.getElementById("msg").value = data[q]['data'];
-            document.getElementById("msg").value = document.getElementById("msg").value & data[q]['msg'];
+            document.getElementById("msg").value = document.getElementById("msg").value + data[q]['msg'];
         }else if(data[q]['res'] == "400"){
-            document.getElementById("msg").value = "正常終了";
+            document.getElementById("msg").value = document.getElementById("msg").value + "正常終了";
         }else if(data[q]['res'] == "700"){
-            document.getElementById("msg").value = "正常終了";
+            document.getElementById("msg").value = document.getElementById("msg").value + "正常終了";
             //表に2次元配列の要素を格納
             //data = JSON.parse(data);
             for(let i in data[q]['data']){
