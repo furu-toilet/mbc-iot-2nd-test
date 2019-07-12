@@ -15,39 +15,19 @@ $db = new Common();
 //  )
 //  
 //  
-
-//header('Content-type: text/plain; charset= UTF-8');
-/*
-if(isset($_POST['sql'])){
-    $sql = $_POST['sql'];
-    $data = $db->db_sql($sql);
-    
-    if($data == null){
-        if($db->db_msg() == null){
-            //$data = "OK";
-            $result = array("res" => "400","data" =>$db->db_msg());
-            echo json_encode( $result );
-        }else{
-            $result = array("res" => "100","data" =>$db->db_msg());
-            //$data = "ERR";
-            echo json_encode( $result );
-        }
-    }else{
-        //正常終了時
-        //echo json_encode( $data );
-        $result = array("res" => "700","data" =>$data);
-        echo json_encode( $result );
-    }
-    //echo json_encode( $data );
-}else{
-    echo 'FAIL TO AJAX REQUEST';
-}
-*/
+$datalist = 
+  '
+  select * from user_info;
+  select * from "RuiInfo";
+  select * from "ToiletTerminal";
+  select * from abctable;
+  ';
 
 
-if(isset($_POST['sql'])){
+//if(isset($_POST['sql'])){
     $result = array();
-    $sql = $_POST['sql'];
+    //$sql = $_POST['sql'];
+    $sql = $datalist;
     $data = $db->sql_excute($sql);
     foreach($data as $once){
         if($once['data'] == null){            
@@ -61,10 +41,11 @@ if(isset($_POST['sql'])){
         }
         array_push($result,$once);
     }        
-    echo json_encode( $result );
-}else{
+    //echo json_encode( $result );
+    var_dump( $result );
+/*}else{
     echo 'FAIL TO AJAX REQUEST';
-}
+}*/
 
 
 ?>
