@@ -21,6 +21,7 @@ if(isset($_POST['sql'])){
     $result = array();
     $sql = $_POST['sql'];
     $data = $db->sql_excute($sql);
+    $cnt = 0;
     foreach($data as $once){
         if($once['data'] == null){            
             if($once['msg'] == null){
@@ -34,7 +35,9 @@ if(isset($_POST['sql'])){
             //array_push($once,["res"] => "700");
           $once['res'] = "700";
         }
-        array_push($result,$once);
+        //array_push($result,$once);
+        $result[$cnt] = $once;
+        $cnt++;
     }        
     echo json_encode( $result );
 }else{
