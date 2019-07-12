@@ -40,7 +40,7 @@ function makeTable(data,tableId){
             document.getElementById("msg").value = data[q]['data'];
         }else if(data[q]['res'] == "400"){
             document.getElementById("msg").value = "正常終了";
-        }else if(data[q]['res'] == "100"){
+        }else if(data[q]['res'] == "700"){
             document.getElementById("msg").value = "正常終了";
             //表に2次元配列の要素を格納
             //data = JSON.parse(data);
