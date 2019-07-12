@@ -70,7 +70,7 @@ function db_sql($sql){
 	return $ex_result;
   }
   /* SQL分割用メソッド(文字列) （完了）*/	//マルチバイトは未対応！！　composer.jsonを要編集！！
-  function sql_split($mltsql){
+  private function sql_split($mltsql){
   	$split_arr = array();
   	$start = 0;
   	while(true){
@@ -84,7 +84,7 @@ function db_sql($sql){
   	return $split_arr;
   }
   /* 単一SQL実行用メソッド（完了） */
-  function sql_once($sql){
+  private function sql_once($sql){
   	$once_result = $this->db_sql($sql);	//実行結果格納
 	$once_msg    = $this->db_msg();		//メッセージ格納
 	$once_arr    = array("sql" => $sql ,"data" => $once_result ,"msg" => $once_msg);//3次元連想配列作成
