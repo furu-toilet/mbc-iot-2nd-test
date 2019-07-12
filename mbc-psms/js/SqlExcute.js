@@ -42,7 +42,7 @@ function makeTable(data,tableId){
         }else if(data[q]['res'] == "400"){
             console.log(data[q]['res']);
             document.getElementById("msg").value = "正常終了";
-        }else{
+        }else if(data[q]['res'] == "100"){
             console.log(data[q]['res']);
             document.getElementById("msg").value = "正常終了";
             //表に2次元配列の要素を格納
