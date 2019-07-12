@@ -36,11 +36,14 @@ function makeTable(data,tableId){
     
     for(var q = 0; q < data.length;q++){
         if(data[q]['res'] == "100"){
+            console.log((data[q]['res']);
             //ErrMsg(sql);                              //※※※変更箇所
             document.getElementById("msg").value = data[q]['data'];
         }else if(data[q]['res'] == "400"){
+            console.log((data[q]['res']);
             document.getElementById("msg").value = "正常終了";
         }else{
+            console.log((data[q]['res']);
             document.getElementById("msg").value = "正常終了";
             //表に2次元配列の要素を格納
             //data = JSON.parse(data);
