@@ -74,7 +74,11 @@ function db_sql($sql){
   	$split_arr = array();
   	$start = 0;
   	while(true){
-  	    $vis = strpos($mltsql, ";", $start) + 1;
+	    if(strpos($mltsql, ";", $start) == false){
+  		$vis = strlen($mltsql);
+  	    }else{
+	    	$vis = strpos($mltsql, ";", $start) + 1;
+	    }
   	    array_push($split_arr,substr($mltsql,$start,$vis - $start));
   	    $start = $vis;
   	    if(strpos($mltsql, ";", $start) == false){
