@@ -82,7 +82,11 @@ function db_sql($sql){
   	    array_push($split_arr,substr($mltsql,$start,$vis - $start));
   	    $start = $vis;
   	    if(strpos($mltsql, ";", $start) == false){
-  		break;
+		if(substr($mltsql,strlen($mltsql),1) = " "){
+			$vis = strlen($mltsql);
+			array_push($split_arr,substr($mltsql,$start,$vis - $start));
+		}
+		break;
   	    }
   	}
   	return $split_arr;
