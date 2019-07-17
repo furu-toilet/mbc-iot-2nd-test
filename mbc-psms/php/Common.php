@@ -70,6 +70,7 @@ function db_sql($sql){
 	return $ex_result;
   }
   /* SQL分割用メソッド(文字列) （完了）*/	//マルチバイトは未対応！！　composer.jsonを要編集！！
+	/*
   private function sql_split($mltsql){
   	$split_arr = array();
   	$start = 0;
@@ -87,6 +88,19 @@ function db_sql($sql){
 			array_push($split_arr,substr($mltsql,$start,$vis - $start));
 		}
 		break;
+  	    }
+  	}
+  	return $split_arr;
+  }*/
+private function sql_split($mltsql){
+  	$split_arr = array();
+  	$start = 0;
+  	while(true){
+  	    $vis = strpos($mltsql, ";", $start) + 1;
+  	    array_push($split_arr,substr($mltsql,$start,$vis - $start));
+  	    $start = $vis;
+  	    if(strpos($mltsql, ";", $start) == false){
+  		break;
   	    }
   	}
   	return $split_arr;
