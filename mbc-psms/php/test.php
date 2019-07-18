@@ -13,10 +13,29 @@ $datalist =
 
 $data2 = "select * from user_info";
 
-var_dump( $db->sql_excute($datalist) );
+function sql_split($mltsql){
+  	$split_arr = array();
+  	$start = 0;
+  	while(true){
+	    if(strpos($mltsql, ";", $start) == false){
+  		    $vis = strlen($mltsql);
+  	  }else{
+	    	  $vis = strpos($mltsql, ";", $start) + 1;
+	    }
+      array_push($split_arr,substr($mltsql,$start,$vis - $start));
+      $start = $vis;
+      if(strpos($mltsql, ";", $start) == false){
+          if(substr($mltsql,strlen($mltsql),1) != null){
+              $vis = strlen($mltsql);
+              array_push($split_arr,substr($mltsql,$start,$vis - $start));
+          }
+          break;
+       }
+   }
+  	var_dump( $split_arr );
+  }
 
-//var_dump( $db->sql_split($datalist) );
+sql_split($data2);
 
-//var_dump( $db->sql_once($data2) );
 
 ?>
