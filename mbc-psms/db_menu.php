@@ -19,7 +19,7 @@
     	<div class="right">
 	   <form method="post" name="SQL_sendform">
 	      <h2>SQL</h2>
-		<textarea class="sendarea" name="sql" id="sql"></textarea><br>
+		<textarea class="sendarea" name="sql" id="sql" required></textarea><br>
 		<div class="right-inputarea">
 			<input class="right-in" type="button" value="実行" id="sql_excute">
 			<input class="right-in" type="button" value="リセット" name="sql_reset" id="sql_reset">
