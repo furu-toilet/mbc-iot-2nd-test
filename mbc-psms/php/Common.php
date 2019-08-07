@@ -74,17 +74,17 @@ function db_sql($sql){
   	$split_arr = array();
   	$start = 0;
   	while(true){
-	    if(mb_strpos($mltsql, ";", $start) == false){
-  		$vis = mb_strlen($mltsql);
+	    if(strpos($mltsql, ";", $start) == false){
+  		$vis = strlen($mltsql);
   	    }else{
-	    	$vis = mb_strpos($mltsql, ";", $start) + 1;
+	    	$vis = strpos($mltsql, ";", $start) + 1;
 	    }
-  	    array_push($split_arr,mb_substr($mltsql,$start,$vis - $start));
+  	    array_push($split_arr,substr($mltsql,$start,$vis - $start));
   	    $start = $vis;
-  	    if(mb_strpos($mltsql, ";", $start) == false){
-		if(mb_substr($mltsql,mb_strlen($mltsql),1) != null){
-			$vis = mb_strlen($mltsql);
-			array_push($split_arr,mb_substr($mltsql,$start,$vis - $start));
+  	    if(strpos($mltsql, ";", $start) == false){
+		if(substr($mltsql,strlen($mltsql),1) != null){
+			$vis = strlen($mltsql);
+			array_push($split_arr,substr($mltsql,$start,$vis - $start));
 		}
 		break;
   	    }
