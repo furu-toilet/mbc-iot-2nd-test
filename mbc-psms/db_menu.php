@@ -16,21 +16,19 @@
         <input class="left-in" type="submit" name="info_menu" value="ユーザ情報" onclick="location.href='./php/info.php'">
 	</header>
     	<iframe class="leftframe" src="left.php" scrolling="yes"></iframe>
-	<iframe src="./main_menu.html" width="1000" height="1000" scrolling="yes">
-		<div class="right">
-		   <form method="post" name="SQL_sendform">
-		      <h2>SQL</h2>
-			<textarea class="sendarea" name="sql" id="sql" required></textarea><br>
-			<div class="right-inputarea">
-				<input class="right-in" type="button" value="実行" id="sql_excute">
-				<input class="right-in" type="button" value="リセット" name="sql_reset" id="sql_reset">
-			</div>
-			<h2>エラーログ</h2>
-			<textarea class="errlog-area" id="msg"></textarea><br>
-			<h2>実行結果</h2>
-			<div id="log"></div>
-			</form>
+	<div class="right">
+	   <form method="post" name="SQL_sendform">
+	      <h2>SQL</h2>
+		<textarea class="sendarea" name="sql" id="sql" required></textarea><br>
+		<div class="right-inputarea">
+			<input class="right-in" type="button" value="実行" id="sql_excute">
+			<input class="right-in" type="button" value="リセット" name="sql_reset" id="sql_reset">
 		</div>
-	</iframe>
+		<h2>エラーログ</h2>
+		<textarea class="errlog-area" id="msg"></textarea><br>
+		<h2>実行結果</h2>
+		<div id="log"></div>
+		</form>
+	</div>
 </body>
 </html>
