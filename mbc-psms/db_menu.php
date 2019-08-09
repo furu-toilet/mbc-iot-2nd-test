@@ -16,7 +16,7 @@
         <input class="left-in" type="submit" name="info_menu" value="ユーザ情報" onclick="location.href='./php/info.php'">
 	</header>
     	<iframe class="leftframe" src="left.php" scrolling="yes"></iframe>
-	<iframe width="1000" height="1000" scrolling="yes">
+	<iframe src="./main_menu.html" width="1000" height="1000" scrolling="yes">
 		<div class="right">
 		   <form method="post" name="SQL_sendform">
 		      <h2>SQL</h2>
