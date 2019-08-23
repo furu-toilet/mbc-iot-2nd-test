@@ -14,8 +14,6 @@
     });
   }
 
-  setTimeout(checkVersion(),5000);
-  
   function checkVersion() {
     // Retrieve current version
     var latestVersion = document.querySelector(".js-currentVersion").textContent;
