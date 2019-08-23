@@ -1,3 +1,4 @@
+var OldStatus = 0;
 showstatus();
 
 function GoPushbar(){    
@@ -20,23 +21,27 @@ function showstatus(){
       var status = JSON.parse(success);
       var vacancy = document.getElementById('vacancy');
       var favicon = document.getElementById('favicon');
-      status.onchange = GoPushbar();
-      switch(status){     //statusの値でcaseで分岐
-        case  0:
-          vacancy.src = "./img/free.png";
-          favicon.href = "./img/FaviconFree.png";
-          break;
-        case  1:
-          vacancy.src = "./img/use.png";
-          favicon.href = "./img/FaviconUse.png";
-          break;
-        case -1:
-          vacancy.src = "./img/not.jpg";
-          favicon.href = "./img/FaviconExit.png";
-          break;
-        default :
-          break;
+      //status.onchange = GoPushbar();
+      if(status =! OldStatus){
+          switch(status){     //statusの値でcaseで分岐
+            case  0:
+              vacancy.src = "./img/free.png";
+              favicon.href = "./img/FaviconFree.png";
+              break;
+            case  1:
+              vacancy.src = "./img/use.png";
+              favicon.href = "./img/FaviconUse.png";
+              break;
+            case -1:
+              vacancy.src = "./img/not.jpg";
+              favicon.href = "./img/FaviconExit.png";
+              break;
+            default :
+              break;
+      }
+      GoPushbar();
     }
+    
     status = null;
     vacancy = null;
     favicon = null;
