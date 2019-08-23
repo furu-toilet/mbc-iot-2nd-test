@@ -8,7 +8,7 @@ var usability = document.getElementById('usability');
 var VisualizeTime = document.getElementById('time');
 var VisualStatus = null;
 
-showtime();
+//showtime();
 
 function showtime(){
     RequestStartTime("./php/GetStatus.php").then(
