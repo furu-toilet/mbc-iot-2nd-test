@@ -4,9 +4,8 @@
 // 最終更新日付：2019/08/23
 // 戻り値：DBの値を配列で返す。ToiletTerminalテーブル
 //        array(status,UpdateTime)
-
-
 /* 以下コード */
+
 require_once "./Common.php";
 $db = new Common();
 
