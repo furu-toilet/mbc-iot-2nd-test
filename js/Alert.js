@@ -30,6 +30,8 @@
     }
   }
 
+  setTimeout(displayNotification(),5000);
+  
   function displayNotification(body, icon, title, link, duration) {
     link = link || 0; // Link is optional
     duration = duration || 5000; // Default duration is 5 seconds
