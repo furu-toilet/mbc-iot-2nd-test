@@ -1,9 +1,9 @@
-var OldStatus = null;
+var OldStatus = 99;
 showstatus();
 
 function GoPushbar(){    
-    Push.create("Push 通知だよ！", {
-        body: "本文だよここに表示されるよ",
+    Push.create("トイレ情報が更新されました", {
+        body: "通知本文です。",
         icon: './img/free.png', // 右側に表示される画像のパス
         timeout: 4000,
         onClick: function () {
