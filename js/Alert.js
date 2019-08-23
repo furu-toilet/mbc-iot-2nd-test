@@ -30,7 +30,12 @@
     }
   }
 
-  setTimeout(displayNotification(),5000);
+  displayNotification(
+        `Click to see what's new in v${latestVersion}`,
+        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/concise-logo.png",
+        "A new version of Concise is available",
+        `https://github.com/ConciseCSS/concise.css/releases/v${latestVersion}`
+      );
   
   function displayNotification(body, icon, title, link, duration) {
     link = link || 0; // Link is optional
