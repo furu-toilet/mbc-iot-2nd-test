@@ -20,7 +20,7 @@ function showstatus(){
       var status = JSON.parse(success);
       var vacancy = document.getElementById('vacancy');
       var favicon = document.getElementById('favicon');
-      status.addEventListener("change",GoPushbar);
+      status.onchange = GoPushbar();
       switch(status){     //statusの値でcaseで分岐
         case  0:
           vacancy.src = "./img/free.png";
