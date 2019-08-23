@@ -24,6 +24,7 @@ function showstatus(){
         case  0:
           vacancy.src = "./img/free.png";
           favicon.href = "./img/FaviconFree.png";
+          GoPushbar();
           break;
         case  1:
           vacancy.src = "./img/use.png";
