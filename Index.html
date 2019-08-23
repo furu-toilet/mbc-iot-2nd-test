@@ -35,7 +35,7 @@
  
     <!-- box1 空室情報・使用時間を表示
               左・中央・右で三分割して記述-->
-    <div class="box1 status" onchange="GoPushbar()">
+    <div class="box1 status">
       <span class=semititle>
         <h3>トイレの空室情報
         </h3>
@@ -50,7 +50,7 @@
       </span>
       <!-- 中央：空室情報-->
       <span class="center">
-        <img class="vacancy" id="vacancy">
+        <img class="vacancy" id="vacancy" onchange="GoPushbar()">
       </span>
       <!-- 右：使用時間-->
       <span class="right">
