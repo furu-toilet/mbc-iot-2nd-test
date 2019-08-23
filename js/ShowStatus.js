@@ -40,6 +40,7 @@ function showstatus(){
               break;
       }
       GoPushbar();
+      OldStatus = status;
     }
     
     status = null;
