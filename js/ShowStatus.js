@@ -22,7 +22,7 @@ function showstatus(){
       var vacancy = document.getElementById('vacancy');
       var favicon = document.getElementById('favicon');
       //status.onchange = GoPushbar();
-      if(status =! OldStatus){
+      if(status != OldStatus){
           switch(status){     //statusの値でcaseで分岐
             case  0:
               vacancy.src = "./img/free.png";
