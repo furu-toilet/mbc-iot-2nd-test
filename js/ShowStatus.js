@@ -1,4 +1,4 @@
-var OldStatus = 0;
+var OldStatus = null;
 showstatus();
 
 function GoPushbar(){    
@@ -38,10 +38,10 @@ function showstatus(){
               break;
             default :
               break;
-      }
-      GoPushbar();
-      OldStatus = status;
-    }
+          }
+          GoPushbar();
+          OldStatus = status;
+       }
     
     status = null;
     vacancy = null;
