@@ -14,7 +14,7 @@
     });
   }
 
-  settimeout(checkVersion,5000);
+  setTimeout(checkVersion(),5000);
   
   function checkVersion() {
     // Retrieve current version
