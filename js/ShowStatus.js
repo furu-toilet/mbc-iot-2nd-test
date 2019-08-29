@@ -39,7 +39,7 @@ function showstatus(){
             default :
               break;
           }
-          //GoPushbar();
+          GoPushbar();
           OldStatus = status;
        }
     
