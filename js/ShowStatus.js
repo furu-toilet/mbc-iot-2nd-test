@@ -1,5 +1,5 @@
 var OldStatus = 99;
-//showstatus();
+showstatus();
 
 function GoPushbar(){    
     Push.create("トイレ情報が更新されました", {
