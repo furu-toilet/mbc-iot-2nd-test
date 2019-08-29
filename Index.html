@@ -15,7 +15,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.7/push.min.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="./js/MainChart.js"></script>
-    <!--script type="text/javascript" src="./js/furu_pushbar.js"></script-->
+    <script type="text/javascript" src="./js/furu_pushbar.js"></script>
     <link rel="icon" type="image/png" sizes="16x16" id="favicon">
   </head>
   <body>
@@ -49,14 +49,14 @@
       </span>
       <!-- 中央：空室情報-->
       <span class="center">
-        <img class="vacancy" id="vacancy" onclick="GoPushbar()">
+        <img class="vacancy" id="vacancy" src="./img/FaviconFree.png">
       </span>
       <!-- 右：使用時間-->
       <span class="right">
         <p class="timer-desc">使用時間
         </p>
         <div class="timer_frame">
-          <span class="time">
+          <span class="time" value="00:00">
             <div id="time"></div>
           </span>
         </div>
