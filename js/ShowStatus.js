@@ -1,9 +1,9 @@
 var OldStatus = 99;
 showstatus();
 
-function GoPushbar(){    
+function GoPushbar(MsgPushbar){    
     Push.create("トイレ情報が更新されました", {
-        body: "通知本文です。",
+        body: MsgPushbar,
         icon: './img/free.png', // 右側に表示される画像のパス
         timeout: 4000,
         onClick: function () {
@@ -21,25 +21,29 @@ function showstatus(){
       var status = JSON.parse(success);
       var vacancy = document.getElementById('vacancy');
       var favicon = document.getElementById('favicon');
+      var MsgPushbar = null;
       //status.onchange = GoPushbar();
       if(status != OldStatus){
           switch(status){     //statusの値でcaseで分岐
             case  0:
               vacancy.src = "./img/free.png";
               favicon.href = "./img/FaviconFree.png";
+              MsgPushbar = "空室";
               break;
             case  1:
               vacancy.src = "./img/use.png";
               favicon.href = "./img/FaviconUse.png";
+              MsgPushbar = "使用中";
               break;
             case -1:
               vacancy.src = "./img/not.jpg";
               favicon.href = "./img/FaviconExit.png";
+              MsgPushbar = "使用不可";
               break;
             default :
               break;
           }
-          GoPushbar();
+          GoPushbar(MsgPushbar);
           OldStatus = status;
        }
     
