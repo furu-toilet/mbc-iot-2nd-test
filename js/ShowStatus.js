@@ -26,19 +26,19 @@ function showstatus(){
       if(status != OldStatus){
           switch(status){     //statusの値でcaseで分岐
             case  0:
+              Msg = "空室";
               vacancy.src = "./img/free.png";
               favicon.href = "./img/FaviconFree.png";
-              Msg = "空室";
               break;
             case  1:
+              Msg = "使用中";
               vacancy.src = "./img/use.png";
               favicon.href = "./img/FaviconUse.png";
-              Msg = "使用中";
               break;
             case -1:
+              Msg = "使用不可"
               vacancy.src = "./img/not.jpg";
               favicon.href = "./img/FaviconExit.png";
-              Msg = "使用不可";
               break;
             default :
               break;
