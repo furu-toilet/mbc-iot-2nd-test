@@ -17,10 +17,7 @@ var_dump($SqlData);
 $StatusData = $SqlData[0]['Status'];
 $UpdateTimeData = $SqlData[0]['UpdateTime'];
 
-//$result = json_encode(array("status"=>$StatusData,"UpdateTime"=>$UpdateTimeData));
+$result = json_encode(array("status"=>$StatusData,"UpdateTime"=>$UpdateTimeData));
 
-//echo $result;
-
-var_dump(array("status"=>$StatusData,"UpdateTime"=>$UpdateTimeData));
-
+echo $result;
 ?>
