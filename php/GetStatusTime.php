@@ -9,8 +9,7 @@
 require_once "./Common.php";
 $db = new Common();
 
-//$sql = "select * from \"ToiletTerminal\" where \"TanmatsuInfo\" = 'ラズパイ1F男子トイレ';";
-$sql = "select * from \"RuiInfo\";";
+$sql = "select * from \"ToiletTerminal\" where \"TanmatsuInfo\" = 'ラズパイ1F男子トイレ';";
 $SqlData = $db->db_sql($sql);     // 現在１レコードを想定
 
 var_dump($SqlData);
