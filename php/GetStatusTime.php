@@ -14,8 +14,8 @@ $SqlData = $db->db_sql($sql);     // 現在１レコードを想定
 
 var_dump($SqlData);
 
-$StatusData = $SqlData['status'];
-$UpdateTimeData = $SqlData['UpdateTime'];
+$StatusData = $SqlData[0]['status'];
+$UpdateTimeData = $SqlData[0]['UpdateTime'];
 
 //$result = json_encode(array("status"=>$StatusData,"UpdateTime"=>$UpdateTimeData));
 
