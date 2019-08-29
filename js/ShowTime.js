@@ -81,12 +81,11 @@ function TimePulus(){
 
 function StatusRequest(NowStatus){
     return new Promise((resolve,reject) => {
-      var status = JSON.parse(success);
       var vacancy = document.getElementById('vacancy');
       var favicon = document.getElementById('favicon');
       //status.onchange = GoPushbar();
-      if(status != OldStatus){
-          switch(status){     //statusの値でcaseで分岐
+      if(NowStatus != OldStatus){
+          switch(NowStatus){     //statusの値でcaseで分岐
             case  0:
               vacancy.src = "./img/free.png";
               favicon.href = "./img/FaviconFree.png";
@@ -125,10 +124,10 @@ function StatusRequest(NowStatus){
               break;
           }
           GoPushbar();
-          OldStatus = status;
+          OldStatus = NowStatus;
        }
     
-        status = null;
+        NowStatus = null;
         vacancy = null;
         favicon = null;
     });
