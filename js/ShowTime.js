@@ -1,5 +1,5 @@
 var time = 0;
-var OldStatus = 0;
+//var OldStatus = 0;
 var min = 0;
 var sec = 0;
 var TimeStr = "00:00";
@@ -7,8 +7,22 @@ var NowStatus = null;
 var usability = document.getElementById('usability');
 var VisualizeTime = document.getElementById('time');
 var VisualStatus = null;
+var OldStatus = 99;
+var Msg = null;
 
 showtime();
+
+function GoPushbar(){    
+    Push.create("トイレ情報が更新されました", {
+        body: Msg,
+        icon: './img/free.png', // 右側に表示される画像のパス
+        timeout: 4000,
+        onClick: function () {
+            location.href = 'https://yahoo.co.jp';
+            this.close();
+        }
+    });
+}
 
 function showtime(){
     RequestStartTime("./php/GetStatus.php").then(
@@ -67,28 +81,55 @@ function TimePulus(){
 
 function StatusRequest(NowStatus){
     return new Promise((resolve,reject) => {
-        if(NowStatus == 0){                //空室の場合
-            OldStatus = 0;
-                time = 0;
-                sec = 0;
-                min = 0;
-            resolve(time);
-            //usability.innerHTML = "空室";
-        }else if(NowStatus == 1){          //在室の場合
-            OldStatus = 1;
-            if(OldStatus == NowStatus){    //前回も在室状態であれば
-                time++;
-                sec = time % 60;
-                min = Math.floor(time/60);
-            }
-            //usability.innerHTML = "在室";
-            resolve(time);
-        }else if(NowStatus == -1){         //使用不可の場合
-            OldStatus = -1;
-                time = 0;
-                sec = 0;
-                min = 0;
-            //usability.innerHTML = "使用不可";
-        }
+      var status = JSON.parse(success);
+      var vacancy = document.getElementById('vacancy');
+      var favicon = document.getElementById('favicon');
+      //status.onchange = GoPushbar();
+      if(status != OldStatus){
+          switch(status){     //statusの値でcaseで分岐
+            case  0:
+              vacancy.src = "./img/free.png";
+              favicon.href = "./img/FaviconFree.png";
+              Msg = "空室";
+              OldStatus = 0;
+              time = 0;
+              sec = 0;
+              min = 0;
+              resolve(time);
+              //usability.innerHTML = "空室";
+              break;
+            case  1:
+              vacancy.src = "./img/use.png";
+              favicon.href = "./img/FaviconUse.png";
+              Msg = "使用中";
+              OldStatus = 1;
+              if(OldStatus == NowStatus){    //前回も在室状態であれば
+                  time++;
+                  sec = time % 60;
+                  min = Math.floor(time/60);
+              }
+              //usability.innerHTML = "在室";
+              resolve(time);
+              break;
+            case -1:
+              vacancy.src = "./img/not.jpg";
+              favicon.href = "./img/FaviconExit.png";
+              Msg = "使用不可";
+              OldStatus = -1;
+              time = 0;
+              sec = 0;
+              min = 0;
+              //usability.innerHTML = "使用不可";
+              break;
+            default :
+              break;
+          }
+          GoPushbar();
+          OldStatus = status;
+       }
+    
+        status = null;
+        vacancy = null;
+        favicon = null;
     });
 }
