@@ -13,7 +13,7 @@ $db = new Common();
 $sql = "select * from \"RuiInfo\";";
 $SqlData = $db->db_sql($sql);     // 現在１レコードを想定
 
-var_sump($SqlData);
+var_dump($SqlData);
 /*
 $StatusData = $SqlData['status'];
 $UpdateTimeData = $SqlData['UpdateTime'];
