@@ -22,6 +22,5 @@ $UpdateTimeData = $SqlData[0]['UpdateTime'];
 //echo $result;
 
 var_dump(array("status"=>$StatusData,"UpdateTime"=>$UpdateTimeData));
-var_dump($sqlData);
 
 ?>
