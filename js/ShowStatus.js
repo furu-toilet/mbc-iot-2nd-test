@@ -1,7 +1,8 @@
 var OldStatus = 99;
+var MsgPushbar = null;
 showstatus();
 
-function GoPushbar(MsgPushbar){    
+function GoPushbar(){    
     Push.create("トイレ情報が更新されました", {
         body: "トイレ情報が更新されました",
         icon: './img/free.png', // 右側に表示される画像のパス
@@ -21,7 +22,6 @@ function showstatus(){
       var status = JSON.parse(success);
       var vacancy = document.getElementById('vacancy');
       var favicon = document.getElementById('favicon');
-      var MsgPushbar = null;
       //status.onchange = GoPushbar();
       if(status != OldStatus){
           switch(status){     //statusの値でcaseで分岐
@@ -43,7 +43,7 @@ function showstatus(){
             default :
               break;
           }
-          GoPushbar(MsgPushbar);
+          GoPushbar();
           OldStatus = status;
        }
     
