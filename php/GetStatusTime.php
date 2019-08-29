@@ -13,7 +13,7 @@ $sql = "select * from \"ToiletTerminal\" where \"TanmatsuInfo\" = 'ラズパイ1
 $SqlData = $db->db_sql($sql);     // 現在１レコードを想定
 
 var_dump($SqlData);
-/*
+
 $StatusData = $SqlData['status'];
 $UpdateTimeData = $SqlData['UpdateTime'];
 
@@ -23,5 +23,5 @@ $UpdateTimeData = $SqlData['UpdateTime'];
 
 var_dump(array("status"=>$StatusData,"UpdateTime"=>$UpdateTimeData));
 var_dump($sqlData);
-*/
+
 ?>
