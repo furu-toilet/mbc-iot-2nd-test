@@ -28,17 +28,17 @@ function showstatus(){
             case  0:
               vacancy.src = "./img/free.png";
               favicon.href = "./img/FaviconFree.png";
-              MsgPushbar = "空室";
+              //MsgPushbar = "空室";
               break;
             case  1:
               vacancy.src = "./img/use.png";
               favicon.href = "./img/FaviconUse.png";
-              MsgPushbar = "使用中";
+              //MsgPushbar = "使用中";
               break;
             case -1:
               vacancy.src = "./img/not.jpg";
               favicon.href = "./img/FaviconExit.png";
-              MsgPushbar = "使用不可";
+              //MsgPushbar = "使用不可";
               break;
             default :
               break;
