@@ -4,7 +4,7 @@ showstatus();
 
 function GoPushbar(){    
     Push.create("トイレ情報が更新されました", {
-        body: ,
+        body: Msg,
         icon: './img/free.png', // 右側に表示される画像のパス
         timeout: 4000,
         onClick: function () {
