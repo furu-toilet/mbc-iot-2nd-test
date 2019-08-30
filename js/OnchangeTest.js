@@ -1,3 +1,3 @@
-var OnStatus = getElementById('status');
+var OnStatus = getElementById('vacancy');
 
 OnStatus.onChange(alert("function start"));
