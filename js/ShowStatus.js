@@ -23,25 +23,19 @@ function showstatus(){
       var status = JSON.parse(success);
       var vacancy = document.getElementById('vacancy');
       var favicon = document.getElementById('favicon');
-      console.log(status);
-      console.log(ShowOldStatus);
       if(status != ShowOldStatus){
-          console.log("switch doing");
           switch(status){     //statusの値でcaseで分岐
             case  0:
-              console.log(0);
               Msg = "空室";
               vacancy.src = "./img/free.png";
               favicon.href = "./img/FaviconFree.png";
               break;
             case  1:
-              console.log(1);
               Msg = "使用中";
               vacancy.src = "./img/use.png";
               favicon.href = "./img/FaviconUse.png";
               break;
             case -1:
-              console.log(-1);
               Msg = "使用不可"
               vacancy.src = "./img/not.jpg";
               favicon.href = "./img/FaviconExit.png";
