@@ -24,6 +24,7 @@ function showstatus(){
       var vacancy = document.getElementById('vacancy');
       var favicon = document.getElementById('favicon');
       console.log(status);
+      console.log(OldStatus);
       if(status != OldStatus){
           console.log("switch doing");
           switch(status){     //statusの値でcaseで分岐
