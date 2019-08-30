@@ -12,8 +12,6 @@ $db = new Common();
 $sql = "select * from \"ToiletTerminal\" where \"TanmatsuInfo\" = 'ラズパイ1F男子トイレ';";
 $SqlData = $db->db_sql($sql);     // 現在１レコードを想定
 
-var_dump($SqlData);
-
 $StatusData = $SqlData[0]['Status'];
 $UpdateTimeData = $SqlData[0]['UpdateTime'];
 
