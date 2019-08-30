@@ -6,4 +6,4 @@ OnStatus.onchange = EveDoing;
 
 var EveDoing = function(){
   console.log("function start");
-}
+};
