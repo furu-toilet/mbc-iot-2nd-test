@@ -15,7 +15,10 @@ function showtime(){
         StatusRequest(NowStatus).then(
             TimeRequest(time).then(
                 TimePulus().then(
-                    VisualizeTime.innerHTML = TimeStr
+                    //VisualizeTime.innerHTML = TimeStr
+                    success => {
+                        VisualizeTime.innerHTML = success;
+                    }
                 )
             )
         )
