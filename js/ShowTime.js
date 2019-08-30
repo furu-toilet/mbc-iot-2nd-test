@@ -72,7 +72,6 @@ function TimePulus(){
 function StatusRequest(NowStatus){
     return new Promise((resolve,reject) => {
         if(NowStatus == 0){                //空室の場合
-            OldStatus = 0;
                 time = 0;
                 sec = 0;
                 min = 0;
@@ -81,9 +80,9 @@ function StatusRequest(NowStatus){
             favicon.href = "./img/FaviconFree.png";
             if(NowStatus != OldStatus){
                 GoPushbar("空室");
+                OldStatus = 0;
             }
         }else if(NowStatus == 1){          //在室の場合
-            OldStatus = 1;
             if(OldStatus == NowStatus){    //前回も在室状態であれば
                 time++;
                 sec = time % 60;
@@ -93,10 +92,10 @@ function StatusRequest(NowStatus){
             favicon.href = "./img/FaviconUse.png";
             if(NowStatus != OldStatus){
                 GoPushbar("在室");
+                OldStatus = 1;
             }
             resolve(time);
         }else if(NowStatus == -1){         //使用不可の場合
-            OldStatus = -1;
             time = 0;
             sec = 0;
             min = 0;
@@ -104,6 +103,7 @@ function StatusRequest(NowStatus){
             favicon.href = "./img/FaviconExit.png";
             if(NowStatus != OldStatus){
                 GoPushbar("使用不可");
+                OldStatus = -1;
             }
         }
     });
