@@ -47,7 +47,7 @@ function showstatus(){
           OldStatus = status;
        }
     
-    status = null;
+    //status = null;
     vacancy = null;
     favicon = null;
     },
