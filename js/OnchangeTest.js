@@ -4,6 +4,6 @@ var OnStatus = document.getElementById('vacancy');
 
 OnStatus.onchange = EveDoing;
 
-function EveDoing(){
+var EveDoing = function(){
   console.log("function start");
 }
