@@ -31,7 +31,7 @@ function RequestStartTime(url){
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
       if(xhr.readyState ===4 && xhr.status === 200){    //通信が正常時
-        NowStatus = xhr.responseText[0]['Status'];
+        NowStatus = xhr.responseText['Status'];
         //UpdateTime = JSON.parse(xhr.responseText)[0]['UpdateTime'];
           //resolve(responsedata);
       }else if(xhr.status === 404){                     //通信が異常時
