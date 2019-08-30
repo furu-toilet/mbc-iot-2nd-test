@@ -10,20 +10,12 @@ var VisualStatus = null;
 
 showtime();
 
-                    //VisualizeTime.innerHTML = TimeStr
-
-function SetTimeStr(GetTime){
-    VisualizeTime.innerHTML = GetTime;
-}
-
-
-
 function showtime(){
     RequestStartTime("./php/GetStatus.php").then(
         StatusRequest(NowStatus).then(
             TimeRequest(time).then(
                 TimePulus().then(
-                    SetTimeStr(GetTime)
+                    VisualizeTime.innerHTML = TimeStr
                 )
             )
         )
