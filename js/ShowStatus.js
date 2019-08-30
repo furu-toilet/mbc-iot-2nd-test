@@ -1,4 +1,4 @@
-var OldStatus = 99;
+var OldStatus = null;
 var Msg = null;
 showstatus();
 
