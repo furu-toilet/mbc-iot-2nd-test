@@ -10,12 +10,20 @@ var VisualStatus = null;
 
 showtime();
 
+                    //VisualizeTime.innerHTML = TimeStr
+
+function SetTimeStr(GetTime){
+    VisualizeTime.innerHTML = GetTime;
+}
+
+
+
 function showtime(){
     RequestStartTime("./php/GetStatus.php").then(
         StatusRequest(NowStatus).then(
             TimeRequest(time).then(
                 TimePulus().then(
-                    //VisualizeTime.innerHTML = TimeStr
+                    SetTimeStr(GetTime)
                 )
             )
         )
@@ -58,9 +66,11 @@ function TimeRequest(time){
 function TimePulus(){
     return new Promise((resolve,reject) => {
         if(sec == 0 & min == 0){
-           TimeStr = "00:00";
+           //TimeStr = "00:00";
+           resolve("00:00");
         }else{
-            TimeStr = min + " : " + sec;
+            //TimeStr = min + " : " + sec;
+            resolve(min + " : " + sec);
            }
     });
 }
