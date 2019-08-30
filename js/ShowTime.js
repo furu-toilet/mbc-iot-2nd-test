@@ -31,8 +31,8 @@ function RequestStartTime(url){
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
       if(xhr.readyState ===4 && xhr.status === 200){    //通信が正常時
-        NowStatus = JSON.parse(xhr.responseText)['Status'];
-        UpdateTime = JSON.parse(xhr.responseText)['UpdateTime'];
+        NowStatus = JSON.parse(xhr.responseText)[0]['Status'];
+        UpdateTime = JSON.parse(xhr.responseText)[0]['UpdateTime'];
           //resolve(responsedata);
       }else if(xhr.status === 404){                     //通信が異常時
         console.log("Err : Not Found Code:404");
