@@ -16,9 +16,6 @@ function showtime(){
             TimeRequest(time).then(
                 TimePulus().then(
                     //VisualizeTime.innerHTML = TimeStr
-                    function() {
-                        VisualizeTime.innerHTML = TimeStr;
-                    }
                 )
             )
         )
