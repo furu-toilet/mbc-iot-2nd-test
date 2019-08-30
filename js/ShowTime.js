@@ -4,6 +4,7 @@ var min = 0;
 var sec = 0;
 var TimeStr = "00:00";
 var NowStatus = null;
+var UpdateTime = null;
 var usability = document.getElementById('usability');
 var VisualizeTime = document.getElementById('time');
 var vacancy = document.getElementById('vacancy');
@@ -13,7 +14,7 @@ var VisualStatus = null;
 showtime();
 
 function showtime(){
-    RequestStartTime("./php/GetStatus.php").then(
+    RequestStartTime("./php/GetStatusTime.php").then(
         StatusRequest(NowStatus).then(
             TimeRequest(time).then(
                 TimePulus().then(
@@ -30,7 +31,8 @@ function RequestStartTime(url){
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
       if(xhr.readyState ===4 && xhr.status === 200){    //通信が正常時
-        NowStatus = xhr.responseText;
+        NowStatus = JSON.parse(xhr.responseText)['Status'];
+        UpdateTime = JSON.parse(xhr.responseText)['UpdateTime'];
           //resolve(responsedata);
       }else if(xhr.status === 404){                     //通信が異常時
         console.log("Err : Not Found Code:404");
