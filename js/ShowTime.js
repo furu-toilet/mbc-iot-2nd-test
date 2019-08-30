@@ -79,7 +79,9 @@ function StatusRequest(NowStatus){
             resolve(time);
             vacancy.src = "./img/free.png";
             favicon.href = "./img/FaviconFree.png";
-            GoPushbar("空室");
+            if(NowStatus != OldStatus){
+                GoPushbar("空室");
+            }
         }else if(NowStatus == 1){          //在室の場合
             OldStatus = 1;
             if(OldStatus == NowStatus){    //前回も在室状態であれば
@@ -89,7 +91,9 @@ function StatusRequest(NowStatus){
             }
             vacancy.src = "./img/use.png";
             favicon.href = "./img/FaviconUse.png";
-            GoPushbar("在室");
+            if(NowStatus != OldStatus){
+                GoPushbar("在室");
+            }
             resolve(time);
         }else if(NowStatus == -1){         //使用不可の場合
             OldStatus = -1;
@@ -98,7 +102,9 @@ function StatusRequest(NowStatus){
             min = 0;
             vacancy.src = "./img/not.jpg";
             favicon.href = "./img/FaviconExit.png";
-            GoPushbar("使用不可");
+            if(NowStatus != OldStatus){
+                GoPushbar("使用不可");
+            }
         }
     });
 }
