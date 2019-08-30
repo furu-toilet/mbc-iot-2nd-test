@@ -1,5 +1,6 @@
-var OldStatus = null;
+var OldStatus = 5;
 var Msg = null;
+
 showstatus();
 
 function GoPushbar(){    
