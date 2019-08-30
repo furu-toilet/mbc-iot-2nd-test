@@ -6,6 +6,8 @@ var TimeStr = "00:00";
 var NowStatus = null;
 var usability = document.getElementById('usability');
 var VisualizeTime = document.getElementById('time');
+var vacancy = document.getElementById('vacancy');
+var favicon = document.getElementById('favicon');
 var VisualStatus = null;
 
 showtime();
@@ -75,7 +77,8 @@ function StatusRequest(NowStatus){
                 sec = 0;
                 min = 0;
             resolve(time);
-            //usability.innerHTML = "空室";
+            vacancy.src = "./img/free.png";
+            favicon.href = "./img/FaviconFree.png";
         }else if(NowStatus == 1){          //在室の場合
             OldStatus = 1;
             if(OldStatus == NowStatus){    //前回も在室状態であれば
@@ -83,14 +86,16 @@ function StatusRequest(NowStatus){
                 sec = time % 60;
                 min = Math.floor(time/60);
             }
-            //usability.innerHTML = "在室";
+            vacancy.src = "./img/use.png";
+            favicon.href = "./img/FaviconUse.png";
             resolve(time);
         }else if(NowStatus == -1){         //使用不可の場合
             OldStatus = -1;
-                time = 0;
-                sec = 0;
-                min = 0;
-            //usability.innerHTML = "使用不可";
+            time = 0;
+            sec = 0;
+            min = 0;
+            vacancy.src = "./img/not.jpg";
+            favicon.href = "./img/FaviconExit.png";
         }
     });
 }
