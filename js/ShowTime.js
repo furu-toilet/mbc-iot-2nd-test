@@ -1,5 +1,5 @@
 var time = 0;
-var OldStatus = 0;
+var OldStatus = 99;
 var min = 0;
 var sec = 0;
 var TimeStr = "00:00";
