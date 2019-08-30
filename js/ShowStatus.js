@@ -23,7 +23,7 @@ function showstatus(){
       var status = JSON.parse(success);
       var vacancy = document.getElementById('vacancy');
       var favicon = document.getElementById('favicon');
-      //status.onchange = GoPushbar();
+      console.log("success");
       if(status != OldStatus){
           console.log("switch doing");
           switch(status){     //statusの値でcaseで分岐
