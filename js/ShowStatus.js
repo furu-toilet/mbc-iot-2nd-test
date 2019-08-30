@@ -1,4 +1,4 @@
-var OldStatus = 5;
+var ShowOldStatus = 5;
 var Msg = null;
 
 showstatus();
@@ -24,8 +24,8 @@ function showstatus(){
       var vacancy = document.getElementById('vacancy');
       var favicon = document.getElementById('favicon');
       console.log(status);
-      console.log(OldStatus);
-      if(status != OldStatus){
+      console.log(ShowOldStatus);
+      if(status != ShowOldStatus){
           console.log("switch doing");
           switch(status){     //statusの値でcaseで分岐
             case  0:
@@ -50,10 +50,10 @@ function showstatus(){
               break;
           }
           GoPushbar();
-          OldStatus = status;
+          ShowOldStatus = status;
        }
     
-    //status = null;
+    status = null;
     vacancy = null;
     favicon = null;
     },
