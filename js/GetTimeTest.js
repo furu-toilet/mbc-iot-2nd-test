@@ -21,4 +21,4 @@ function GetTimeStatus(url){
   });
 }
 
-console.log(GetTimeStatus("./GetTimeStatus.php"));
+console.log(GetTimeStatus("./php/GetStatusTime.php"));
