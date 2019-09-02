@@ -1,9 +1,8 @@
 var GetMin = null;
 var GetHour = null;
 
-function GetTimeStatus(url){
+function GetData(url){
     return new Promise((resolve,reject) => {
-    //var url = "./php/GetStatusTime.php";
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
       if(xhr.readyState ===4 && xhr.status === 200){    //通信が正常時
@@ -17,6 +16,6 @@ function GetTimeStatus(url){
   });
 }
 
-GetTimeStatus("./php/GetStatusTime.php").then( (data) => {
+GetData("./php/GetStatusTime.php").then( (data) => {
   console.log(data);
 });
