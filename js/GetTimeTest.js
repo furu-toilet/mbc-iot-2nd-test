@@ -17,5 +17,8 @@ function GetData(url){
 }
 
 GetData("./php/GetStatusTime.php").then( (data) => {
-  console.log(data);
+  //console.log(data);
+  var MyDate = new Date(data('UpdateTime'));
+  console.log(MyDate.hour);
 });
+
