@@ -21,7 +21,7 @@ function SetDateTime(){
     var MyMinutes = null;
     GetData("./php/GetStatusTime.php").then( (data) => {
       var MyDate = new Date(data['UpdateTime']);
-      return array("Hours" => MyDate.getHours,"Minutes" => MyDate.getMinutes);
+      return　{"Hours" : MyDate.getHours,"Minutes" : MyDate.getMinutes};
     });
 }
 
