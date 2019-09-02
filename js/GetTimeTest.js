@@ -16,9 +16,17 @@ function GetData(url){
   });
 }
 
-GetData("./php/GetStatusTime.php").then( (data) => {
-  console.log(data['UpdateTime']);
-  var MyDate = new Date(data['UpdateTime']);
-  console.log(MyDate.getHours());
-});
+function SetDateTime(){
+    var MyHour = null;
+    var MyMinutes = null;
+    GetData("./php/GetStatusTime.php").then( (data) => {
+      var MyDate = new Date(data['UpdateTime']);
+      return array("Hours" => MyDate.getHours,"Minutes" => MyDate.getMinutes);
+    });
+}
 
+function ReturnDateTime(){
+    console.log(SetDateTime());
+}
+
+ReturnDateTime();
