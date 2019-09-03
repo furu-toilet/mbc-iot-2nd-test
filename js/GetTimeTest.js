@@ -26,6 +26,7 @@ function SetDateTime(){
 */
 function ChangeData(Data){
     return new Promise((resolve,reject) => {
+      console.log(Data);
       var MyDate = new Date(Data['UpdateTime']);
       resolve( {"Status" : Data['Status'],"Hours" : MyDate.getHours,"Minutes" : MyDate.getMinutes} );
     });
@@ -35,6 +36,7 @@ function ChangeData(Data){
 
 function SetParameters(Data){
     return new Promise((resolve,reject) => {
+        console.log(Data);
         a = Data['Status'];
         b = Data['Hours'];
         c = Data['Minutes'];
