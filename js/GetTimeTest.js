@@ -50,7 +50,7 @@ function ShowSetData(){
 GetData("./php/GetStatusTime.php").then( data => {
     ChangeData(data).then( data => {
         SetParameters(data).then( data => {
-            ShowSetData()
-        })
-    })
+            ShowSetData();
+        });
+    });
 });
