@@ -40,6 +40,7 @@ function SetParameters(Data){
         aaaa = Data['Status'];
         bbbb = Data['Hours'];
         cccc = Data['Minutes'];
+        resolve(Data);
     });
 }
 
