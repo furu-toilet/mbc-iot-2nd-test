@@ -1,6 +1,6 @@
-var a = null;
-var b = null;
-var c = null;
+var aaaa = null;
+var bbbb = null;
+var cccc = null;
 
 function GetData(url){
     return new Promise((resolve,reject) => {
@@ -37,17 +37,18 @@ function ChangeData(Data){
 function SetParameters(Data){
     return new Promise((resolve,reject) => {
         console.log(Data);
-        a = Data['Status'];
-        b = Data['Hours'];
-        c = Data['Minutes'];
+        aaaa = Data['Status'];
+        bbbb = Data['Hours'];
+        cccc = Data['Minutes'];
     });
 }
 
 function ShowSetData(data){
     return new Promise((resolve,reject) => {
-        console.log(a);
-        console.log(b);
-        console.log(c);
+        console.log(data);
+        console.log(aaaa);
+        console.log(bbbb);
+        console.log(cccc);
     });
 }
 
