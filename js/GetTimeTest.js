@@ -46,7 +46,6 @@ function SetParameters(Data){
 
 function ShowSetData(data){
     return new Promise((resolve,reject) => {
-        console.log(data);
         console.log(aaaa);
         console.log(bbbb);
         console.log(cccc);
@@ -56,8 +55,7 @@ function ShowSetData(data){
 GetData("./php/GetStatusTime.php").then( data => {
     ChangeData(data).then( data => {
         SetParameters(data).then( data => {
-            ShowSetData(data).then( data => {
-                console.log("aaa");
+            ShowSetData(data).then( function (){
             });
         });
     });
