@@ -47,9 +47,9 @@ function ShowSetData(){
     console.log(c);
 }
 
-GetData("./php/GetStatusTime.php").then(funciton (data){
-    ChangeData(data).then(function (data){
-        SetParameters(data).then(function (data){
+GetData("./php/GetStatusTime.php").then( data => {
+    ChangeData(data).then( data => {
+        SetParameters(data).then( data => {
             ShowSetData()
         })
     })
