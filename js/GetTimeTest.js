@@ -44,10 +44,11 @@ function SetParameters(Data){
 }
 
 function ShowSetData(data){
-    console.log(a);
-    console.log(b);
-    console.log(c);
-    console.log(data);
+    return new Promise((resolve,reject) => {
+        console.log(a);
+        console.log(b);
+        console.log(c);
+    });
 }
 
 GetData("./php/GetStatusTime.php").then( data => {
