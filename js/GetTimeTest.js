@@ -41,16 +41,17 @@ function SetParameters(Data){
     });
 }
 
-function ShowSetData(){
+function ShowSetData(data){
     console.log(a);
     console.log(b);
     console.log(c);
+    console.log(data);
 }
 
 GetData("./php/GetStatusTime.php").then( data => {
     ChangeData(data).then( data => {
         SetParameters(data).then( data => {
-            ShowSetData();
+            ShowSetData(data);
         });
     });
 });
