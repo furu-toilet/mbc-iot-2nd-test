@@ -1,5 +1,6 @@
-var GetMin = null;
-var GetHour = null;
+var a = null;
+var b = null;
+var c = null;
 
 function GetData(url){
     return new Promise((resolve,reject) => {
@@ -15,18 +16,41 @@ function GetData(url){
     xhr.send(null);
   });
 }
-
+/*
 function SetDateTime(){
-    var MyHour = null;
-    var MyMinutes = null;
     GetData("./php/GetStatusTime.php").then( (data) => {
       var MyDate = new Date(data['UpdateTime']);
-      return　{"Hours" : MyDate.getHours,"Minutes" : MyDate.getMinutes};
+      return　{"Status" : data['Status'],"Hours" : MyDate.getHours,"Minutes" : MyDate.getMinutes};
+    });
+}
+*/
+function ChangeData(Data){
+    return new Promise((resolve,reject) => {
+      var MyDate = new Date(Data['UpdateTime']);
+      resolve( {"Status" : Data['Status'],"Hours" : MyDate.getHours,"Minutes" : MyDate.getMinutes} );
     });
 }
 
-function ReturnDateTime(){
-    console.log(SetDateTime());
+
+
+function SetParameters(Data){
+    return new Promise((resolve,reject) => {
+        a = Data['Status'];
+        b = Data['Hours'];
+        c = Data['Minutes'];
+    });
 }
 
-ReturnDateTime();
+function ShowSetData(){
+    GetData("./php/GetStatusTime.php").then(
+        ChangeData(Data).then(
+            SetParameters(Data).then(
+                console.log(a),
+                console.log(b),
+                console.log(c),
+            );
+        );
+    );
+}
+
+ShowSetData();
