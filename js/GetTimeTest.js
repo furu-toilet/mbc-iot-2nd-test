@@ -42,15 +42,15 @@ function SetParameters(Data){
 }
 
 function ShowSetData(){
-    GetData("./php/GetStatusTime.php").then(
-        ChangeData(Data).then(
-            SetParameters(Data).then(
-                console.log(a),
-                console.log(b),
-                console.log(c),
-            )
-        )
-    );
+    console.log(a);
+    console.log(b);
+    console.log(c);
 }
 
-ShowSetData();
+GetData("./php/GetStatusTime.php").then(
+    ChangeData(CD).then(
+        SetParameters(SP).then(
+            ShowSetData();
+        );
+    );
+);
