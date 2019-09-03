@@ -47,10 +47,10 @@ function ShowSetData(){
     console.log(c);
 }
 
-GetData("./php/GetStatusTime.php").then(
-    ChangeData(CD).then(
-        SetParameters(SP).then(
+GetData("./php/GetStatusTime.php").then(funciton (data){
+    ChangeData(data).then(function (data){
+        SetParameters(data).then(function (data){
             ShowSetData()
-        )
-    )
-);
+        })
+    })
+});
