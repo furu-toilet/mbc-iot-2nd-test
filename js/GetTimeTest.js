@@ -54,7 +54,10 @@ function ShowSetData(data){
     });
 }
 
-GetData("./php/GetStatusTime.php").then( data => {
+//https://test-mbc.herokuapp.com/Test.html
+
+//GetData("./php/GetStatusTime.php").then( data => {
+GetData("https://test-mbc.herokuapp.com/php/GetStatusTime.php").then( data => {
     ChangeData(data).then( data => {
         SetParameters(data).then( data => {
             ShowSetData(data).then( function (){
