@@ -30,7 +30,7 @@ function ChangeData(Data){
       var MyDate = new Date(Data['UpdateTime']);
       var Hours = MyDate.getHours;
       var Minutes = MyDate.getMinutes;
-      resolve( {"Hours" : Hours + 1,"Minutes" : Minutes" + 1,Status" : Data['Status']} );
+      resolve( {"Hours" : Hours + 1,"Minutes" : Minutes + 1,"Status" : Data['Status']} );
     });
 }
 
