@@ -16,32 +16,24 @@ function GetData(url){
     xhr.send(null);
   });
 }
-/*
-function SetDateTime(){
-    GetData("./php/GetStatusTime.php").then( (data) => {
-      var MyDate = new Date(data['UpdateTime']);
-      return　{"Status" : data['Status'],"Hours" : MyDate.getHours,"Minutes" : MyDate.getMinutes};
-    });
-}
-*/
+
 function ChangeData(Data){
     return new Promise((resolve,reject) => {
       console.log(Data);
       var MyDate = new Date(Data['UpdateTime']);
+      console.log(Date.getHours());
       var Hours = MyDate.getHours;
       var Minutes = MyDate.getMinutes;
       resolve( {"Hours" : Hours,"Minutes" : Minutes,"Status" : Data['Status']} );
     });
 }
 
-
-
 function SetParameters(Data){
     return new Promise((resolve,reject) => {
         console.log(Data);
         aaaa = Data['Status'];
-        bbbb = Data['Hours'] + 1;
-        cccc = Data['Minutes'] + 1;
+        bbbb = Data['Hours'];
+        cccc = Data['Minutes'];
         resolve(Data);
     });
 }
