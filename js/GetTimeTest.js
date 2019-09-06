@@ -22,8 +22,8 @@ function ChangeData(Data){
       console.log(Data);
       var MyDate = new Date(Data['UpdateTime']);
       console.log(MyDate.getHours());
-      var Hours = MyDate.getHours;
-      var Minutes = MyDate.getMinutes;
+      var Hours = MyDate.getHours();
+      var Minutes = MyDate.getMinutes();
       resolve( {"Hours" : Hours,"Minutes" : Minutes,"Status" : Data['Status']} );
     });
 }
