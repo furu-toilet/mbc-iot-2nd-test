@@ -30,7 +30,7 @@ function ChangeData(Data){
       var MyDate = new Date(Data['UpdateTime']);
       var Hours = MyDate.getHours;
       var Minutes = MyDate.getMinutes;
-      resolve( {"Hours" : Hours + 1,"Minutes" : Minutes + 1,"Status" : Data['Status']} );
+      resolve( {"Hours" : Hours,"Minutes" : Minutes,"Status" : Data['Status']} );
     });
 }
 
@@ -40,8 +40,8 @@ function SetParameters(Data){
     return new Promise((resolve,reject) => {
         console.log(Data);
         aaaa = Data['Status'];
-        bbbb = Data['Hours'];
-        cccc = Data['Minutes'];
+        bbbb = Data['Hours'] + 1;
+        cccc = Data['Minutes'] + 1;
         resolve(Data);
     });
 }
