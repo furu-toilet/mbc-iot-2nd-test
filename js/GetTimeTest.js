@@ -21,7 +21,7 @@ function ChangeData(Data){
     return new Promise((resolve,reject) => {
       console.log(Data);
       var MyDate = new Date(Data['UpdateTime']);
-      console.log(Date.getHours());
+      console.log(MyDate.getHours);
       var Hours = MyDate.getHours;
       var Minutes = MyDate.getMinutes;
       resolve( {"Hours" : Hours,"Minutes" : Minutes,"Status" : Data['Status']} );
