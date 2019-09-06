@@ -28,7 +28,9 @@ function ChangeData(Data){
     return new Promise((resolve,reject) => {
       console.log(Data);
       var MyDate = new Date(Data['UpdateTime']);
-      resolve( {"Status" : Data['Status'],"Hours" : MyDate.getHours,"Minutes" : MyDate.getMinutes} );
+      var Hours = MyDate.getHours;
+      var Minutes = MyDate.getMinutes;
+      resolve( {"Status" : Data['Status'],"Hours" : Hours,"Minutes" : Minutes} );
     });
 }
 
